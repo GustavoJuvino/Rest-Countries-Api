@@ -10,6 +10,8 @@
 
 # production
 /build
+README2.md
+style-guide.md
 
 # misc
 .DS_Store

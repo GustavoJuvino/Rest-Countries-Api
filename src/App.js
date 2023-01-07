@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Components/Header';
 import './App.css';
 import Countries from './Components/Countries';
+import InfosCountries from './Components/InfosCountries';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <Header/>
       <Routes>
         <Route path='/' element={<Countries/>}/>
+        <Route path='country' element={<InfosCountries/>}/>
       </Routes>
     </BrowserRouter>
   )

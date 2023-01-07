@@ -4,13 +4,18 @@ import { GET_INFOS } from '../api';
 import { CountriesSection, Country } from './styles/Countries.styled';
 import InputSearch from './InputSearch';
 import FilterMenu from './FilterMenu';
+import { useNavigate } from 'react-router-dom';
 
 const Countries = () => {
   const {data, request} = useFetch();
+  const navigate = useNavigate();
   const [country, setCountry] = React.useState("");
   const [continent, setContinent] = React.useState("");
 
+  const [alpha, setAlpha] = React.useState("");
+
   React.useEffect(() => {
+    console.log(alpha)
     const {options} = GET_INFOS();
     // Default
     request(`https://restcountries.com/v3.1/all`, options);
@@ -18,9 +23,7 @@ const Countries = () => {
     if(continent) request(`https://restcountries.com/v3.1/region/${continent}`, options);
     // Selecting by input search
     if(country.length > 0) request(`https://restcountries.com/v3.1/name/${country}`, options);
-  }, [request, country, continent])
-
-
+  }, [alpha, request, country, continent])
 
   return (
     <>
@@ -28,11 +31,19 @@ const Countries = () => {
         <InputSearch setCountry={setCountry}/>
         <FilterMenu setContinent={setContinent}/>
       </section>
+
       {data ? (
         <CountriesSection>
           {data.map((info) => (
             <Country key={info.name.official}>
-              <img src={info.flags.png} alt={info.tld}/>
+              <img 
+                onClick={({target}) => {
+                  setAlpha(target.alt);
+                  navigate('country')
+                }}
+                src={info.flags.png}
+                alt={info.cca2}
+              />
               <div className="CountriesTexts">
                 <h1
                   key={info.name.common}>

@@ -6,4 +6,4 @@ const InfosCountries = () => {
   )
 }
 
-export default InfosCountries
+export default InfosCountries;

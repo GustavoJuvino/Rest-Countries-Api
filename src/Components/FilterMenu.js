@@ -8,17 +8,17 @@ const FilterMenu = ({setContinent}) => {
   // Click outside menu
   let filterSection = React.useRef();
 
-  React.useEffect(() => {
-    if(filterSection){
-        let handler = (e) => {
-          if(!filterSection.current.contains(e.target)){
-            setDisplay("none");
-            document.removeEventListener("click", handler);
-          }
-        }
-        document.addEventListener("click", handler);
-    }
-  },[display])
+  // React.useEffect(() => {
+  //   if(filterSection){
+  //       let handler = (e) => {
+  //         if(!filterSection.current.contains(e.target)){
+  //           setDisplay("none");
+  //           document.removeEventListener("click", handler);
+  //         }
+  //       }
+  //       document.addEventListener("click", handler);
+  //   }
+  // },[display])
 
   const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 

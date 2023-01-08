@@ -5,6 +5,7 @@ import { CountriesSection, Country } from './styles/Countries.styled';
 import InputSearch from './InputSearch';
 import FilterMenu from './FilterMenu';
 import { useNavigate } from 'react-router-dom';
+import { CountryContext } from './CountryStorage';
 
 const Countries = () => {
   const {data, request} = useFetch();
@@ -14,8 +15,9 @@ const Countries = () => {
 
   const [alpha, setAlpha] = React.useState("");
 
+  let context = React.useContext(CountryContext);
+
   React.useEffect(() => {
-    console.log(alpha)
     const {options} = GET_INFOS();
     // Default
     request(`https://restcountries.com/v3.1/all`, options);
@@ -23,7 +25,7 @@ const Countries = () => {
     if(continent) request(`https://restcountries.com/v3.1/region/${continent}`, options);
     // Selecting by input search
     if(country.length > 0) request(`https://restcountries.com/v3.1/name/${country}`, options);
-  }, [alpha, request, country, continent])
+  }, [context, request, country, continent])
 
   return (
     <>
@@ -39,7 +41,7 @@ const Countries = () => {
               <img 
                 onClick={({target}) => {
                   setAlpha(target.alt);
-                  navigate('country')
+                  navigate('country');
                 }}
                 src={info.flags.png}
                 alt={info.cca2}

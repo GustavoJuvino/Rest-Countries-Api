@@ -8,6 +8,7 @@ const FilterMenu = ({setContinent}) => {
   // Click outside menu
   let filterSection = React.useRef();
 
+  // It's disabled due the creation of InfosCountries.js
   // React.useEffect(() => {
   //   if(filterSection){
   //       let handler = (e) => {

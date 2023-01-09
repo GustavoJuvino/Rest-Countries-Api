@@ -15,7 +15,7 @@ const Countries = () => {
 
   const [alpha, setAlpha] = React.useState("");
 
-  let context = React.useContext(CountryContext);
+  const {test, setTest} = React.useContext(CountryContext);
 
   React.useEffect(() => {
     const {options} = GET_INFOS();
@@ -25,7 +25,7 @@ const Countries = () => {
     if(continent) request(`https://restcountries.com/v3.1/region/${continent}`, options);
     // Selecting by input search
     if(country.length > 0) request(`https://restcountries.com/v3.1/name/${country}`, options);
-  }, [context, request, country, continent])
+  }, [test, request, country, continent])
 
   return (
     <>
@@ -40,7 +40,7 @@ const Countries = () => {
             <Country key={info.name.official}>
               <img 
                 onClick={({target}) => {
-                  setAlpha(target.alt);
+                  setTest(target.alt);
                   navigate('country');
                 }}
                 src={info.flags.png}

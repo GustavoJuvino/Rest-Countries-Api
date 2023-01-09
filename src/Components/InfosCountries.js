@@ -2,11 +2,11 @@ import React from 'react';
 import { CountryContext } from './CountryStorage';
 
 const InfosCountries = () => {
-  let context = React.useContext(CountryContext);
-  
+  const {test} = React.useContext(CountryContext);
+
   React.useEffect(() => {
-    console.log(context);
-  },[context])
+    if(test) console.log(test)
+  },[test])
 
   return (
     <div>InfosCountries</div>

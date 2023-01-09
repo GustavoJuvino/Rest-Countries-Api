@@ -19,12 +19,13 @@ const Countries = () => {
 
   React.useEffect(() => {
     const {options} = GET_INFOS();
-    // Default
-    request(`https://restcountries.com/v3.1/all`, options);
-    // Selecting by filter menu
-    if(continent) request(`https://restcountries.com/v3.1/region/${continent}`, options);
-    // Selecting by input search
-    if(country.length > 0) request(`https://restcountries.com/v3.1/name/${country}`, options);
+    if(country.length > 0) {
+      request(`https://restcountries.com/v3.1/name/${country}`, options);
+    } else if (continent) {
+      request(`https://restcountries.com/v3.1/region/${continent}`, options);
+    } else {
+      request(`https://restcountries.com/v3.1/all`, options);
+    }
   }, [test, request, country, continent])
 
   return (

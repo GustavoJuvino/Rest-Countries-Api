@@ -1,24 +1,28 @@
 import React from 'react';
-import { CountryContext } from './CountryStorage';
-import { useNavigate,useLocation} from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 const InfosCountries = () => {
-  const {test} = React.useContext(CountryContext);
-  const [value, setValue] = React.useState();
-  const navigate = useNavigate();
+  const {id} = useParams();
+  const [data, setData] = React.useState("");
 
   React.useEffect(() => {
-    if(!test) navigate("/");
-  },[test, navigate])
-
-  // const valor = React.useMemo(() => {
-  //   // só será executado uma vez
-  //   return console.log(test);
-  // }, [test]);
+    fetch(`https://restcountries.com/v3.1/alpha/${id}`)
+    .then((r) => r.json())
+    .then((data) => {
+      if (data !== undefined) {
+        setData(data)
+      } else{
+        alert("Can't Load Data")
+      }
+    })
+  }, [data, id]);
 
 
   return (
     <div>
+      <h1>
+        {data ? data[0].name.common : null}
+      </h1>
     </div>
     
   )

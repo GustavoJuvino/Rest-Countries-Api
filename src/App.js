@@ -13,7 +13,7 @@ const App = () => {
       <CountryStorage>
         <Routes>
           <Route path='/' element={<Countries/>}/>
-          <Route path='country' element={<InfosCountries/>}/>
+          <Route path='country/:id' element={<InfosCountries/>}/>
         </Routes>
       </CountryStorage>
     </BrowserRouter>

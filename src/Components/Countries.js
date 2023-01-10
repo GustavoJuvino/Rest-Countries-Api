@@ -42,7 +42,7 @@ const Countries = () => {
               <img 
                 onClick={({target}) => {
                   setTest(target.alt);
-                  navigate('country');
+                  navigate(`country/${info.cca2}`);
                 }}
                 src={info.flags.png}
                 alt={info.cca2}

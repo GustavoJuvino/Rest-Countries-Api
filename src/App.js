@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Components/Header';
 import './App.css';
 import Countries from './Components/Countries';
-import InfosCountries from './Components/InfosCountries';
+import Country from './Components/Country';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CountryStorage } from './Components/CountryStorage';
 
@@ -13,7 +13,7 @@ const App = () => {
       <CountryStorage>
         <Routes>
           <Route path='/' element={<Countries/>}/>
-          <Route path='country/:id' element={<InfosCountries/>}/>
+          <Route path='country/:id' element={<Country/>}/>
         </Routes>
       </CountryStorage>
     </BrowserRouter>

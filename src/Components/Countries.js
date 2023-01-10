@@ -1,37 +1,32 @@
 import React from 'react';
 import useFetch from '../Hooks/useFetch';
-import { GET_INFOS } from '../api';
-import { CountriesSection, Country } from './styles/Countries.styled';
 import InputSearch from './InputSearch';
 import FilterMenu from './FilterMenu';
+import { CountriesSection, Country } from './styles/Countries.styled';
+import { GET_INFOS } from '../api';
 import { useNavigate } from 'react-router-dom';
-import { CountryContext } from './CountryStorage';
 
 const Countries = () => {
   const {data, request} = useFetch();
   const navigate = useNavigate();
-  const [country, setCountry] = React.useState("");
+  const [search, setSearch] = React.useState("");
   const [continent, setContinent] = React.useState("");
-
-  const [alpha, setAlpha] = React.useState("");
-
-  const {test, setTest} = React.useContext(CountryContext);
 
   React.useEffect(() => {
     const {options} = GET_INFOS();
-    if(country.length > 0) {
-      request(`https://restcountries.com/v3.1/name/${country}`, options);
+    if(search.length > 0) {
+      request(`https://restcountries.com/v3.1/name/${search}`, options);
     } else if (continent) {
       request(`https://restcountries.com/v3.1/region/${continent}`, options);
     } else {
       request(`https://restcountries.com/v3.1/all`, options);
     }
-  }, [test, request, country, continent])
+  }, [request, search, continent])
 
   return (
     <>
       <section className="first-container">
-        <InputSearch setCountry={setCountry}/>
+        <InputSearch setSearch={setSearch}/>
         <FilterMenu setContinent={setContinent}/>
       </section>
 
@@ -40,12 +35,9 @@ const Countries = () => {
           {data.map((info) => (
             <Country key={info.name.official}>
               <img 
-                onClick={({target}) => {
-                  setTest(target.alt);
-                  navigate(`country/${info.cca2}`);
-                }}
                 src={info.flags.png}
-                alt={info.cca2}
+                alt={info.cca2}              
+                onClick={() => {navigate(`country/${info.cca2}`)}}
               />
               <div className="CountriesTexts">
                 <h1

@@ -2,7 +2,7 @@ import React from 'react';
 import { ReactComponent as SearchIcon } from '../Assets/search.svg';
 import { SearchDiv } from './styles/Input.styled';
 
-const InputSearch = ({setCountry}) => {
+const InputSearch = ({setSearch}) => {
 
   return (
         <SearchDiv>
@@ -12,7 +12,7 @@ const InputSearch = ({setCountry}) => {
                 placeholder="Search for a country..."
                 onChange={ (event) =>
                   setTimeout(() => {
-                    setCountry(event.target.value)
+                    setSearch(event.target.value)
                   }, 1200)
                 }
               />

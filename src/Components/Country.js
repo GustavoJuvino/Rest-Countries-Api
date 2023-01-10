@@ -41,6 +41,12 @@ const Country = () => {
             <li>Currencies: <span>Euro</span></li>
           </ul>
 
+          <nav>
+            <button>France</button>
+            <button>France</button>
+            <button>France</button>
+          </nav>
+
         </div>
       </div>
     </section>

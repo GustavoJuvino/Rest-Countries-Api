@@ -1,4 +1,6 @@
 import React from 'react';
+import { BackButton, CountrySection } from './styles/Country.styled';
+import { ReactComponent as LeftIcon } from '../Assets/left-arrow.svg';
 import { useParams } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
 import { GET_INFOS } from '../api';
@@ -12,22 +14,17 @@ const Country = () => {
     request(`https://restcountries.com/v3.1/alpha/${id}`, options);
   }, [id, request])
 
-//   <h1>
-//   {data ? data[0].name.common : null}
-// </h1>
-
   return (
     <section>
-      <button>Back</button>
+      <BackButton><LeftIcon className="left-icon"/>Back</BackButton>
 
-      <div>
+      <CountrySection>
         {data ? (
               <img src={data[0].flags.png} alt="teste"/>
         ): null}
-        <div className='CountryInfos'>
-          <h1>Belgium</h1>
 
           <ul>
+            <li><h1>Belgium</h1></li>
             <li>Native Name: <span>Belgie</span></li>
             <li>Native Name: <span>Belgie</span></li>
             <li>Native Name: <span>Belgie</span></li>
@@ -42,13 +39,11 @@ const Country = () => {
           </ul>
 
           <nav>
-            <button>France</button>
-            <button>France</button>
-            <button>France</button>
-          </nav>
-
-        </div>
-      </div>
+              <button>France</button>
+              <button>France</button>
+              <button>France</button>
+            </nav>
+      </CountrySection>
     </section>
     
   )

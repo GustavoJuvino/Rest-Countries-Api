@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackButton, CountrySection } from './styles/Country.styled';
+import { BackButton, CountrySection, NavLinks, InfosList, InfosList2 } from './styles/Country.styled';
 import { ReactComponent as LeftIcon } from '../Assets/left-arrow.svg';
 import { useParams } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
@@ -23,29 +23,47 @@ const Country = () => {
               <img src={data[0].flags.png} alt="teste"/>
         ): null}
 
-          <ul>
-            <li><h1>Belgium</h1></li>
-            <li>Native Name: <span>Belgie</span></li>
-            <li>Native Name: <span>Belgie</span></li>
-            <li>Native Name: <span>Belgie</span></li>
-            <li>Native Name: <span>Belgie</span></li>
-            <li>Native Name: <span>Belgie</span></li>
-          </ul>
+          <div>
+            <h1>Belgium</h1>
+            <InfosList>
+              <li>
+                <p>Native Name: <span>Belgie</span></p>
+              </li>
+              <li>
+                <p>Native Name: <span>Belgie</span></p>
+              </li>
+              <li>
+                <p>Native Name: <span>Belgie</span></p>
+              </li>
+              <li>
+                <p>Native Name: <span>Belgie</span></p>
+              </li>
+              <li>
+                <p>Native Name: <span>Belgie</span></p>
+              </li>
+            </InfosList>
 
-          <ul>
-            <li>Currencies: <span>Euro</span></li>
-            <li>Currencies: <span>Euro</span></li>
-            <li>Currencies: <span>Euro</span></li>
-          </ul>
+            <NavLinks>
+                <p>Border Countries:</p>
+                <button className='country-link'>France</button>
+                <button className='country-link'>France</button>
+                <button className='country-link'>France</button>
+            </NavLinks>
+          </div>
 
-          <nav>
-              <button>France</button>
-              <button>France</button>
-              <button>France</button>
-            </nav>
+            <InfosList2>
+              <li>
+                <p>Currencies: <span>Euro</span></p>
+              </li>
+              <li>
+                <p>Currencies: <span>Euro</span></p>
+              </li>
+              <li>
+                <p>Currencies: <span>Euro</span></p>
+              </li>
+            </InfosList2>
       </CountrySection>
     </section>
-    
   )
 }
 

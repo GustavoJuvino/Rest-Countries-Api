@@ -18,13 +18,67 @@ export const BackButton = styled.button`
 
 export const CountrySection = styled.section`
     display: grid;
-    grid-template-columns: repeat(3, 0.2fr);
-    grid-gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
     margin-top: 50px;
 
     & img {
-        width: 450px;
-        height: 350px;
+        width: 550px;
+        height: 420px;
         margin-left: 100px;
+    }
+
+    & h1 {
+        margin-top: 40px;
+        margin-left: 38px;
+        font-size: 28px;
+    }
+
+`
+
+export const InfosList = styled.ul`
+    margin-top: 20px;
+
+    & li{
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    & p {
+        font-weight: 700;
+    }
+
+    & span {
+         font-weight: 400;
+    }
+`
+
+export const NavLinks = styled.nav`
+    margin-top: 90px;
+    margin-left: 38px;
+    display: flex;
+
+    & p {
+        font-weight: 700;
+    }
+
+    & .country-link {
+        margin-left: 10px;
+        width: 100px;
+    }
+`
+
+export const InfosList2 = styled.ul`
+    margin-top: 88px;
+
+    & li {
+        margin-top: 10px;
+    }
+
+    & p {
+        font-weight: 700;
+    }
+
+    & span {
+         font-weight: 400;
     }
 `

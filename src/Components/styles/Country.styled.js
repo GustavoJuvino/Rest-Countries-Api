@@ -16,7 +16,7 @@ export const BackButton = styled.button`
     }
 `
 
-export const CountrySection = styled.section`
+export const CountryContainer = styled.section`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 50px;
@@ -27,48 +27,56 @@ export const CountrySection = styled.section`
         margin-left: 100px;
     }
 
-    & h1 {
+    /* & h1 {
         margin-top: 40px;
         margin-left: 38px;
         font-size: 28px;
-    }
+    } */
 
+    & h1 {
+        font-size: 28px;
+    }
 `
+export const CountryTexts = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 0.4fr);
 
-export const InfosList = styled.ul`
-    margin-top: 20px;
+    & ul {
+        margin-top: 20px;
 
-    & li{
-        margin-top: 10px;
-        font-size: 16px;
-    }
+        & li {
+            margin-top: 10px;
+            font-size: 16px;
+        }
 
-    & p {
-        font-weight: 700;
-    }
+        & p {
+            font-weight: 700;
+        }
 
-    & span {
+        & span {
          font-weight: 400;
-    }
-`
-
-export const NavLinks = styled.nav`
-    margin-top: 90px;
-    margin-left: 38px;
-    display: flex;
-
-    & p {
-        font-weight: 700;
+        }
     }
 
-    & .country-link {
-        margin-left: 10px;
-        width: 100px;
+    & .ul-list-2{
+        margin-top: 58px;
+    }
+
+    & nav {
+        margin-left: 50px;
+        
+        & p {
+            font-weight: 700;
+        }
+
+        & .country-link {
+            margin-left: 10px;
+        }      
     }
 `
 
 export const InfosList2 = styled.ul`
-    margin-top: 88px;
+    margin-top: 60px;
 
     & li {
         margin-top: 10px;

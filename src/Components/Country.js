@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackButton, CountryContainer, CountryTexts, NavLinks, InfosList, InfosList2 } from './styles/Country.styled';
+import { BackButton, CountryContainer, CountryTexts} from './styles/Country.styled';
 import { ReactComponent as LeftIcon } from '../Assets/left-arrow.svg';
 import { useParams } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
@@ -23,7 +23,7 @@ const Country = () => {
         ): null}
         <CountryTexts>
           <ul>
-            <h1>Belgium</h1>
+            <li><h1>Belgium</h1></li>
             <li>
               <p>Native Name: <span>Belgie</span></p>
             </li>
@@ -55,9 +55,11 @@ const Country = () => {
 
           <nav>
             <p>Border Countries:</p>
-            <button className='country-link'>France</button>
-            <button className='country-link'>France</button>
-            <button className='country-link'>France</button>
+            <div>
+              <button className='country-link'>France</button>
+              <button className='country-link'>France</button>
+              <button className='country-link'>France</button>
+            </div>
           </nav>
         </CountryTexts>
       </CountryContainer>

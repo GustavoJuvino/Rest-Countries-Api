@@ -26,23 +26,19 @@ export const CountryContainer = styled.section`
         height: 420px;
         margin-left: 100px;
     }
-
-    /* & h1 {
-        margin-top: 40px;
-        margin-left: 38px;
-        font-size: 28px;
-    } */
-
-    & h1 {
-        font-size: 28px;
-    }
 `
 export const CountryTexts = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, 0.4fr);
+    grid-template-columns: repeat(2, 350px);
+    margin-left: 120px;
+
+    & h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
 
     & ul {
-        margin-top: 20px;
+        margin-top: 50px;
 
         & li {
             margin-top: 10px;
@@ -59,11 +55,12 @@ export const CountryTexts = styled.div`
     }
 
     & .ul-list-2{
-        margin-top: 58px;
+        margin-top: 110px;
     }
 
     & nav {
-        margin-left: 50px;
+        margin-left: 38px;
+        display: flex;
         
         & p {
             font-weight: 700;
@@ -71,22 +68,7 @@ export const CountryTexts = styled.div`
 
         & .country-link {
             margin-left: 10px;
+            padding: 0px;
         }      
-    }
-`
-
-export const InfosList2 = styled.ul`
-    margin-top: 60px;
-
-    & li {
-        margin-top: 10px;
-    }
-
-    & p {
-        font-weight: 700;
-    }
-
-    & span {
-         font-weight: 400;
     }
 `

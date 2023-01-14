@@ -46,11 +46,11 @@ export const CountryTexts = styled.div`
         }
 
         & p {
-            font-weight: 700;
+            font-weight:  600;
         }
 
         & span {
-         font-weight: 400;
+         font-weight: 300;
         }
     }
 

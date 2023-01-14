@@ -14,57 +14,28 @@ const Country = () => {
     request(`https://restcountries.com/v3.1/alpha/${id}`, options);
   }, [id, request])
 
+  if(data) console.log(data[0].name.nativeName)
+
   return (
     <>
       <BackButton><LeftIcon className="left-icon"/>Back</BackButton>
-      <CountryContainer>
-        {data ? (
-          <img src={data[0].flags.png} alt="teste"/>
-        ): null}
-        <CountryTexts>
-          <ul>
-            <li><h1>Belgium</h1></li>
-            <li>
-              <p>Native Name: <span>Belgie</span></p>
-            </li>
-            <li>
-              <p>Native Name: <span>Belgie</span></p>
-            </li>
-            <li>
-              <p>Native Name: <span>Belgie</span></p>
-            </li>
-            <li>
-              <p>Native Name: <span>Belgie</span></p>
-            </li>
-            <li>
-              <p>Native Name: <span>Belgie</span></p>
-            </li>
-          </ul>
 
-          <ul className="ul-list-2">
-            <li>
-              <p>Currencies: <span>Euro</span></p>
-            </li>
-            <li>
-              <p>Currencies: <span>Euro</span></p>
-            </li>
-            <li>
-              <p>Currencies: <span>Euro</span></p>
-            </li>
-          </ul>
-
-          <nav>
-            <p>Border Countries:</p>
-            <div>
-              <button className='country-link'>France</button>
-              <button className='country-link'>France</button>
-              <button className='country-link'>France</button>
-            </div>
-          </nav>
-        </CountryTexts>
-      </CountryContainer>
+      {data ? data.map((info) => (
+        <CountryContainer key={info.altSpellings[0]}>
+          <img src={info.flags.png} alt={info.cca3} key={info.cca3}/>
+          <CountryTexts>
+            <ul>
+              <li><h1 key={info.name.common}>{info.name.common}</h1></li>
+              <li>
+                <p>Native name: {info.name.nld}</p>
+              </li>
+            </ul>
+          </CountryTexts>
+        </CountryContainer>
+      )) : null}
     </>
   )
 }
 
 export default Country;
+

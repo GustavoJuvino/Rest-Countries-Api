@@ -34,7 +34,7 @@ export const CountryTexts = styled.div`
 
     & h1 {
         font-size: 32px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     & ul {
@@ -46,11 +46,11 @@ export const CountryTexts = styled.div`
         }
 
         & p {
-            font-weight:  600;
+            font-weight:  700;
         }
 
         & span {
-         font-weight: 300;
+         font-weight: 600;
         }
     }
 

@@ -9,16 +9,13 @@ const Country = () => {
   const {id} = useParams();
   const {data, request} = useFetch();
 
-  // Check this
-  // https://restcountries.com/v2/name/belgium
   React.useEffect(() => {
     const {options} = GET_INFOS();
     request(`https://restcountries.com/v2/alpha//${id}`, options);
   }, [id, request])
 
-  // if(data) data.languages.forEach(element => {
-  //     	console.log(element.name)
-  // });
+  let languages = [];
+  if(data) languages = data.languages.map((e) => e.name).join(", ");
 
   return (
     <>
@@ -56,9 +53,16 @@ const Country = () => {
                 <p>Currencies: <span>{data.currencies[0].code}</span></p>
               </li>
               <li>
-                <p>Languages: {data.languages.map((e) => (<span key={e.name}>{`${e.name} `}</span>))}</p>
+                <p>Languages: <span>{languages}</span></p>
               </li>
             </ul>
+
+            <nav>
+              <p>Border Countries</p>
+              <div>
+                
+              </div>
+            </nav>
           </CountryTexts>
         </CountryContainer>
       ): null}

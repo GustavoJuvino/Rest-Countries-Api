@@ -1,21 +1,22 @@
 import React from 'react';
 import { BackButton, CountryContainer, CountryTexts} from './styles/Country.styled';
 import { ReactComponent as LeftIcon } from '../Assets/left-arrow.svg';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
 import { GET_INFOS } from '../api';
 
 const Country = () => {
-  const {id} = useParams();
+  let {id} = useParams();
   const {data, request} = useFetch();
 
   React.useEffect(() => {
     const {options} = GET_INFOS();
-    request(`https://restcountries.com/v2/alpha//${id}`, options);
+    request(`https://restcountries.com/v2/alpha/${id}`, options);
   }, [id, request])
 
   let languages = [];
   if(data) languages = data.languages.map((e) => e.name).join(", ");
+  
 
   return (
     <>
@@ -60,7 +61,11 @@ const Country = () => {
             <nav>
               <p>Border Countries</p>
               <div>
-                
+                {data.borders && (
+                  data.borders.map((name) => (
+                    <Link key={name} to={`/country/${name}`}>{name}</Link>
+                  ))
+                )}
               </div>
             </nav>
           </CountryTexts>

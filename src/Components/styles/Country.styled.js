@@ -18,18 +18,23 @@ export const BackButton = styled.button`
 
 export const CountryContainer = styled.section`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 50px;
+    grid-template-columns: repeat(2, 1fr);
 
     & img {
         width: 550px;
         height: 420px;
         margin-left: 100px;
     }
+
+    & .ul-list-2{
+        margin-top: 110px;
+        margin-left: 120px;
+    }
 `
 export const CountryTexts = styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 350px);
+    display: flex;
+    /* grid-template-columns: repeat(2, 500px);
+    gap: 50px; */
     margin-left: 120px;
 
     & h1 {
@@ -54,21 +59,12 @@ export const CountryTexts = styled.div`
         }
     }
 
-    & .ul-list-2{
-        margin-top: 110px;
-    }
+`
 
-    & nav {
-        margin-left: 38px;
-        display: flex;
-        
-        & p {
-            font-weight: 700;
-        }
-
-        & .country-link {
-            margin-left: 10px;
-            padding: 0px;
-        }      
+export const NavBorders = styled.nav`
+    margin-left: 38px;
+    display: flex;
+    & p {
+        font-weight: 700;
     }
 `

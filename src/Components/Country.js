@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackButton, CountryContainer, CountryInfos, CountryInfosColumn1, CountryInfosColumn2} from './styles/Country.styled';
+import { BackButton, CountryContainer, CountryInfos, InfosColumn, NavCountries} from './styles/Country.styled';
 import { ReactComponent as LeftIcon } from '../Assets/left-arrow.svg';
 import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
@@ -17,21 +17,25 @@ const Country = () => {
 
   let languages = [];
   if(data) languages = data.languages.map((e) => e.name).join(", ");
-  
+
   return (
     <>
-      <BackButton><LeftIcon className="left-icon"/>Back</BackButton>
+      <BackButton>
+        <LeftIcon className="left-icon"/>
+        Back
+      </BackButton>
+      
       {data ? (
         <CountryContainer>
           <img src={data.flags.svg} alt={data.alpha3Code}/>
           <CountryInfos>
-            <CountryInfosColumn1>
-            <h1>{data.name}</h1>
+            <InfosColumn>
+              <h1>{data.name}</h1>
               <p>Native name: 
                 <span> {data.nativeName} </span>
               </p>
               <p>Population: 
-                <span> {data.population} </span>
+                <span> {data.population.toLocaleString()} </span>
               </p>
               <p>Region: 
                 <span> {data.region} </span>
@@ -42,28 +46,34 @@ const Country = () => {
               <p>Capital: 
                 <span> {data.capital} </span>
               </p>
-            </CountryInfosColumn1>
+            </InfosColumn>
 
-            <CountryInfosColumn2>
-                  <p>Top Level Domain: <span>{data.topLevelDomain}</span></p>
-                  <p>Currencies: <span>{data.currencies[0].code}</span></p>
-                  <p>Languages: <span>{languages}</span></p>
-              </CountryInfosColumn2>
+            <InfosColumn className='infos-column-2'>
+              <p>Top Level Domain: 
+                <span> {data.topLevelDomain} </span>
+              </p>
+              <p>Currencies: 
+                <span> {data.currencies[0].name} </span>
+              </p>
+              <p>Languages: 
+                <span> {languages} </span>
+              </p>
+            </InfosColumn>
 
-              <nav>
-              <p>Border Countries</p>
+            <NavCountries>
+              <p>Border Countries:</p>
               <div>
                 {data.borders && (
                   data.borders.splice(0, 4).map((name) => (
-                    // <Link className="testing" key={name} to={`/country/${name}`}>{name}</Link>
-
-                    <button onClick={() => {navigate(`/country/${name}`)}} key={name}>
+                    <button 
+                      key={name}
+                      onClick={() => {navigate(`/country/${name}`)}}>
                       {name}
                     </button>
                     ))
                   )}
               </div>
-            </nav>
+            </NavCountries>
           </CountryInfos>
         </CountryContainer>
       ): null}

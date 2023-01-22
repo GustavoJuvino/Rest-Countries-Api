@@ -20,6 +20,7 @@ export const CountryContainer = styled.section`
     display: grid;
     grid-template-columns: auto 2fr 0.5fr;
     margin-top: 50px;
+
     & img {
         width: 550px;
         height: 420px;
@@ -34,54 +35,46 @@ export const CountryInfos = styled.section`
     margin-top: 80px;
     margin-left: 150px;
 
-    & nav {
-        display: flex;
-
-        & p {
-            font-weight: 700;
-        }
-        & div {
-            margin-left: 20px;
-        }
-        & button {
-                cursor: pointer;
-                box-shadow: 0px 0px 10px 0px rgba(85, 85, 85, 0.200);
-                border: none;
-                width: 120px;
-                height: 28px;
-                margin-left: 20px;
-            }
+    & .infos-column-2{
+        margin-top: 50px;
     }
 `
 
-export const CountryInfosColumn1 = styled.div`
+export const InfosColumn = styled.div`
     width: 400px;
+
     & h1 {
         font-size: 28px;
         margin-bottom: 20px;
         word-break: break-word;
     }
 
-        & p {
-            font-weight:  700;
-            margin-top: 10px;
-        }
+    & p {
+        font-weight:  700;
+        margin-top: 10px;
+    }
 
-        & span {
-            font-weight: 600;
-        }
+    & span {
+        font-weight: 600;
+    }
 `
+export const NavCountries = styled.nav`
+    display: flex;
 
-export const CountryInfosColumn2 = styled.section`
-    /* margin-left: 100px; */
-    margin-top: 50px;
-        & p {
-            font-weight:  700;
-            margin-top: 10px;
-            font-size: 16px;
-        }
+    & p {
+        font-weight: 700;
+    }
 
-        & span {
-            font-weight: 600;
-        }
+    & div {
+        margin-left: 20px;
+    }
+
+    & button {
+        cursor: pointer;
+        box-shadow: 0px 0px 10px 0px rgba(85, 85, 85, 0.200);
+        border: none;
+        width: 120px;
+        height: 28px;
+        margin-left: 20px;
+    }
 `

@@ -18,8 +18,7 @@ export const BackButton = styled.button`
 
 export const CountryContainer = styled.section`
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    width: auto;
+    grid-template-columns: auto 2fr 0.5fr;
     margin-top: 50px;
     & img {
         width: 550px;
@@ -31,7 +30,8 @@ export const CountryContainer = styled.section`
 export const CountryInfos = styled.section`
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 80%;
+    margin-top: 80px;
     margin-left: 150px;
 
     & nav {
@@ -55,17 +55,16 @@ export const CountryInfos = styled.section`
 `
 
 export const CountryInfosColumn1 = styled.div`
-    margin-top: 50px;
-
+    width: 400px;
     & h1 {
-        font-size: 32px;
-        margin-bottom: 30px;
+        font-size: 28px;
+        margin-bottom: 20px;
+        word-break: break-word;
     }
 
         & p {
             font-weight:  700;
             margin-top: 10px;
-            font-size: 16px;
         }
 
         & span {
@@ -74,8 +73,8 @@ export const CountryInfosColumn1 = styled.div`
 `
 
 export const CountryInfosColumn2 = styled.section`
-    margin-top: 110px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
+    margin-top: 50px;
         & p {
             font-weight:  700;
             margin-top: 10px;

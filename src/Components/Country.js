@@ -25,23 +25,22 @@ const Country = () => {
         <CountryContainer>
           <img src={data.flags.svg} alt={data.alpha3Code}/>
           <CountryInfos>
-
             <CountryInfosColumn1>
-              <h1>{data.name}</h1>
+            <h1>{data.name}</h1>
               <p>Native name: 
-                <span>{data.nativeName}</span>
+                <span> {data.nativeName} </span>
               </p>
               <p>Population: 
-                <span>{data.population}</span>
+                <span> {data.population} </span>
               </p>
               <p>Region: 
-                <span>{data.region}</span>
+                <span> {data.region} </span>
               </p>
               <p>Sub region: 
-                <span>{data.subregion}</span>
+                <span> {data.subregion} </span>
                 </p>
               <p>Capital: 
-                <span>{data.capital}</span>
+                <span> {data.capital} </span>
               </p>
             </CountryInfosColumn1>
 

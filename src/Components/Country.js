@@ -35,7 +35,7 @@ const Country = () => {
                 <span> {data.nativeName} </span>
               </p>
               <p>Population: 
-                <span> {data.population.toLocaleString()} </span>
+                <span> {data.population.toLocaleString("en-US")} </span>
               </p>
               <p>Region: 
                 <span> {data.region} </span>
@@ -60,7 +60,7 @@ const Country = () => {
               </p>
             </InfosColumn>
 
-            <NavCountries>
+            {/* <NavCountries>
               <p>Border Countries:</p>
               <div>
                 {data.borders && (
@@ -73,7 +73,7 @@ const Country = () => {
                     ))
                   )}
               </div>
-            </NavCountries>
+            </NavCountries> */}
           </CountryInfos>
         </CountryContainer>
       ): null}

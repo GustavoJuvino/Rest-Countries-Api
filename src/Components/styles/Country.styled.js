@@ -17,9 +17,14 @@ export const BackButton = styled.button`
 `
 
 export const CountryContainer = styled.section`
-    display: grid;
-    grid-template-columns: auto 2fr 0.5fr;
+    border: 1px solid black;
+    display: flex;
     margin-top: 50px;
+
+    @media (max-width: 1036px) {
+        display: block;
+        margin-top: 0px;
+    }
 
     & img {
         width: 550px;
@@ -31,9 +36,17 @@ export const CountryContainer = styled.section`
 export const CountryInfos = styled.section`
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
     margin-top: 80px;
-    margin-left: 150px;
+    margin-left: 5%;
+
+    @media (max-width: 1457px) {
+        display: block;
+        margin-top: 0px;
+    }
+
+    @media (max-width: 1036px) {
+        margin-left: 100px;
+    }
 
     & .infos-column-2{
         margin-top: 50px;
@@ -60,6 +73,10 @@ export const InfosColumn = styled.div`
 `
 export const NavCountries = styled.nav`
     display: flex;
+
+    @media (max-width: 1457px) {
+        margin-top: 50px;
+    }
 
     & p {
         font-weight: 700;

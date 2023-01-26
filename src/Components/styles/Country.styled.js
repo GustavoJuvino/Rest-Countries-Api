@@ -17,7 +17,6 @@ export const BackButton = styled.button`
 `
 
 export const CountryContainer = styled.section`
-    border: 1px solid black;
     display: flex;
     margin-top: 50px;
 
@@ -29,6 +28,8 @@ export const CountryContainer = styled.section`
     & img {
         width: 550px;
         height: 420px;
+        /* width: 28%;
+        height: auto;  */
         margin-left: 100px;
     }
 `
@@ -40,7 +41,6 @@ export const CountryInfos = styled.section`
     margin-left: 5%;
 
     @media (max-width: 1457px) {
-        display: block;
         margin-top: 0px;
     }
 

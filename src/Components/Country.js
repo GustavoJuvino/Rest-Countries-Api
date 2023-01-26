@@ -60,7 +60,7 @@ const Country = () => {
               </p>
             </InfosColumn>
 
-            {/* <NavCountries>
+            <NavCountries>
               <p>Border Countries:</p>
               <div>
                 {data.borders && (
@@ -73,7 +73,7 @@ const Country = () => {
                     ))
                   )}
               </div>
-            </NavCountries> */}
+            </NavCountries>
           </CountryInfos>
         </CountryContainer>
       ): null}

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BackButton = styled.button`
     width: 120px;
     height: 40px;
-    margin-left: 100px;
+    margin-left: 5%;
     margin-top: 50px;
     font-size: 14px;
     background-color: transparent;
@@ -19,18 +19,23 @@ export const BackButton = styled.button`
 export const CountryContainer = styled.section`
     display: flex;
     margin-top: 50px;
+    margin-left: 5%;
 
     @media (max-width: 1036px) {
         display: block;
-        margin-top: 0px;
     }
 
     & img {
         width: 550px;
-        height: 420px;
-        /* width: 28%;
-        height: auto;  */
-        margin-left: 100px;
+        height: auto;
+
+        @media (max-width: 1110px) {
+            width: 45%;
+        }
+
+        @media (max-width: 680px) {
+            width: 280px;
+        }
     }
 `
 
@@ -41,12 +46,13 @@ export const CountryInfos = styled.section`
     margin-left: 5%;
 
     @media (max-width: 1457px) {
-        margin-top: 0px;
+        margin-top: 50px;
     }
 
     @media (max-width: 1036px) {
-        margin-left: 100px;
+        margin-left: 0px;
     }
+
 
     & .infos-column-2{
         margin-top: 50px;
@@ -76,6 +82,15 @@ export const NavCountries = styled.nav`
 
     @media (max-width: 1457px) {
         margin-top: 50px;
+    }
+
+    @media (max-width: 400px) {
+        display: flex;
+        flex-wrap: wrap;
+        & button {
+            margin-top: 20px;
+            margin-left: 0px;
+        }
     }
 
     & p {

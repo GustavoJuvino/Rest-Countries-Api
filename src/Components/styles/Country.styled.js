@@ -60,7 +60,7 @@ export const CountryInfos = styled.section`
 `
 
 export const InfosColumn = styled.div`
-    width: 400px;
+    width: 450px;
 
     & h1 {
         font-size: 28px;
@@ -78,6 +78,7 @@ export const InfosColumn = styled.div`
     }
 `
 export const NavCountries = styled.nav`
+    margin-top: 50px;
     display: flex;
 
     @media (max-width: 1457px) {

@@ -12,11 +12,34 @@ const Country = () => {
 
   React.useEffect(() => {
     const {options} = GET_INFOS();
-    request(`https://restcountries.com/v2/alpha/${id}`, options);
+    request(`https://restcountries.com/v3.1/alpha/${id}`, options);
   }, [id, request])
 
-  let languages = [];
-  if(data) languages = data.languages.map((e) => e.name).join(", ");
+  // let languages = [];
+  // if(data) languages = data.languages.map((e) => e.name).join(", ");
+
+  // testing
+  const languagesTest = {
+    "EUR": {
+      "name": "Euro",
+      "symbol": "€"
+    }
+  }
+
+  // arr.forEach((a) => console.log(a[1].common))
+
+  let names;
+  let arr;
+  let name = [];
+
+  if(data) {
+    names = data[0].name.nativeName;
+    arr = Object.entries(names);
+    arr.forEach((a) => name.push(a[1].common));
+  }
+
+  // if(data) console.log(data[0].currencies)
+
 
   return (
     <>
@@ -25,26 +48,27 @@ const Country = () => {
         Back
       </BackButton>
       
-      {data ? (
-        <CountryContainer>
-          <img src={data.flags.svg} alt={data.alpha3Code}/>
+    {data ? (
+      data.map((info) => (
+        <CountryContainer key={info.cioc}>
+          <img src={info.flags.svg} alt={info.tld}/>
           <CountryInfos>
             <InfosColumn>
-              <h1>{data.name}</h1>
+              <h1>{info.name.common}</h1>
               <p>Native name: 
-                <span> {data.nativeName} </span>
+                <span> {name.join(", ")}</span>
               </p>
-              <p>Population: 
-                <span> {data.population.toLocaleString("en-US")} </span>
+              <p>Population:
+                <span> {info.population.toLocaleString("en-US")} </span>
               </p>
               <p>Region: 
-                <span> {data.region} </span>
+                <span> {info.region} </span>
               </p>
               <p>Sub region: 
-                <span> {data.subregion} </span>
-                </p>
+                <span> {info.subregion} </span>
+              </p>
               <p>Capital: 
-                <span> {data.capital} </span>
+                <span> {info.capital} </span>
               </p>
             </InfosColumn>
 
@@ -53,30 +77,16 @@ const Country = () => {
                 <span> {data.topLevelDomain} </span>
               </p>
               <p>Currencies: 
-                <span> {data.currencies[0].name} </span>
+                {/* <span> {info.currencies[0].name} </span> */}
               </p>
               <p>Languages: 
-                <span> {languages} </span>
+                {/* <span> {languages} </span> */}
               </p>
-            </InfosColumn>
-
-            <NavCountries>
-              <p>Border Countries:</p>
-              <div>
-                {data.borders && (
-                  data.borders.splice(0, 4).map((name) => (
-                    <button 
-                      key={name}
-                      onClick={() => {navigate(`/country/${name}`)}}>
-                      {name}
-                    </button>
-                    ))
-                  )}
-              </div>
-            </NavCountries>
+        </InfosColumn>
           </CountryInfos>
         </CountryContainer>
-      ): null}
+      ))
+    ): null}
     </>
   )
 }

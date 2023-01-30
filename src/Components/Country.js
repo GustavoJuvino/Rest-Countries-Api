@@ -15,19 +15,20 @@ const Country = () => {
     request(`https://restcountries.com/v3.1/alpha/${id}`, options);
   }, [id, request])
 
+  // Testing
   // let languages = [];
   // if(data) languages = data.languages.map((e) => e.name).join(", ");
 
-  // testing
-  const languagesTest = {
-    "EUR": {
-      "name": "Euro",
-      "symbol": "€"
-    }
+  // Currencies
+  let currenciesArray;
+  let currency;
+
+  if(data) {
+    currenciesArray = Object.entries(data[0].currencies);
+    currenciesArray.forEach((a) => currency = a[1].name);
   }
 
-  // arr.forEach((a) => console.log(a[1].common))
-
+  // Native Name
   let names;
   let arr;
   let name = [];
@@ -37,8 +38,6 @@ const Country = () => {
     arr = Object.entries(names);
     arr.forEach((a) => name.push(a[1].common));
   }
-
-  if(data) console.log(data[0])
 
 
   return (
@@ -77,7 +76,7 @@ const Country = () => {
                 <span> {data.topLevelDomain} </span>
               </p>
               <p>Currencies: 
-                {/* <span> {info.currencies[0].name} </span> */}
+                <span> {currency} </span>
               </p>
               <p>Languages: 
                 {/* <span> {languages} </span> */}

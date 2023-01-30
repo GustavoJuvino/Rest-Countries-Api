@@ -7,7 +7,7 @@ import { GET_INFOS } from '../api';
 
 const Country = () => {
   let {id} = useParams();
-  const {data, request} = useFetch();
+  const {data, request, error} = useFetch();
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -38,7 +38,7 @@ const Country = () => {
     arr.forEach((a) => name.push(a[1].common));
   }
 
-  // if(data) console.log(data[0].currencies)
+  if(data) console.log(data[0])
 
 
   return (
@@ -87,6 +87,8 @@ const Country = () => {
         </CountryContainer>
       ))
     ): null}
+
+    {error ? (<h1>{error}</h1>) : null}
     </>
   )
 }

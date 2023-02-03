@@ -19,18 +19,30 @@ const Country = () => {
   // let languages = [];
   // if(data) languages = data.languages.map((e) => e.name).join(", ");
 
+  // Currencies
+  let arrayCurrencies;
+  let currency;
 
-  let objNames;
-  let objCurrency;
-  let objLanguages;
+  let arrayNames;
+  let names = [];
 
+  let arrLanguages;
+  let languages = [];
 
-  function test(value){
-    return Object.entries(value);
+  if(data) {
+    arrayCurrencies = Object.entries(data[0].currencies);
+    arrayCurrencies.forEach((a) => currency = a[1].name);
+
+    arrayNames = Object.entries(data[0].name.nativeName);
+    arrayNames.forEach((a) => names.push(a[1].common));
+
+    arrLanguages = Object.entries(data[0].languages);
+    arrLanguages.forEach((a) => languages.push(a[1]));
   }
 
-  if(data) objNames = test(data[0].name.nativeName);
-  if(data) console.log(objNames);
+
+  // if(data) objNames = test(data[0].name.nativeName);
+  // if(data) console.log(objNames);
 
   return (
     <>
@@ -47,7 +59,7 @@ const Country = () => {
             <InfosColumn>
               <h1>{info.name.common}</h1>
               <p>Native name: 
-                {/* <span> {name.join(", ")}</span> */}
+                <span> {names.join(", ")}</span>
               </p>
               <p>Population:
                 <span> {info.population.toLocaleString("en-US")} </span>
@@ -68,10 +80,10 @@ const Country = () => {
                 <span> {data[0].tld[0]} </span>
               </p>
               <p>Currencies: 
-                {/* <span> {currency} </span> */}
+                <span> {currency} </span>
               </p>
               <p>Languages: 
-                {/* <span> {languages.join(", ")} </span> */}
+                <span> {languages.join(", ")} </span>
               </p>
         </InfosColumn>
           </CountryInfos>

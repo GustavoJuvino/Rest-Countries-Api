@@ -19,11 +19,9 @@ const Country = () => {
   // let languages = [];
   // if(data) languages = data.languages.map((e) => e.name).join(", ");
 
-  // Currencies
   let currencies = data ? Object.entries(data[0].currencies) : "";
 
-  let arrayNames;
-  let names = [];
+  let nativeNames = data ? Object.entries(data[0].name.nativeName) : "";
 
   let arrLanguages;
   let languages = [];
@@ -63,7 +61,7 @@ const Country = () => {
             <InfosColumn>
               <h1>{info.name.common}</h1>
               <p>Native name: 
-                {/* <span> {names.join(", ")}</span> */}
+                <span> {nativeNames.map((name) => name[1].common).join(", ")}</span> 
               </p>
               <p>Population:
                 <span> {info.population.toLocaleString("en-US")} </span>

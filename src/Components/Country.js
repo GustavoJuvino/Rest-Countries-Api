@@ -20,8 +20,7 @@ const Country = () => {
   // if(data) languages = data.languages.map((e) => e.name).join(", ");
 
   // Currencies
-  let arrayCurrencies;
-  let currency;
+  let currencies = data ? Object.entries(data[0].currencies) : "";
 
   let arrayNames;
   let names = [];
@@ -29,16 +28,21 @@ const Country = () => {
   let arrLanguages;
   let languages = [];
 
-  if(data) {
-    arrayCurrencies = Object.entries(data[0].currencies);
-    arrayCurrencies.forEach((a) => currency = a[1].name);
+  // if(data) {
+  //   arrayCurrencies = Object.entries(data[0].currencies);
+  //   arrayCurrencies.forEach((a) => currency = a[1].name);
 
-    arrayNames = Object.entries(data[0].name.nativeName);
-    arrayNames.forEach((a) => names.push(a[1].common));
+  //   arrayNames = Object.entries(data[0].name.nativeName);
+  //   arrayNames.forEach((a) => names.push(a[1].common));
 
-    arrLanguages = Object.entries(data[0].languages);
-    arrLanguages.forEach((a) => languages.push(a[1]));
-  }
+  //   arrLanguages = Object.entries(data[0].languages);
+  //   arrLanguages.forEach((a) => languages.push(a[1]));
+  // }
+
+
+
+//  if(data) arrayCurrencies.forEach((a) => console.log(a));
+
 
 
   // if(data) objNames = test(data[0].name.nativeName);
@@ -59,7 +63,7 @@ const Country = () => {
             <InfosColumn>
               <h1>{info.name.common}</h1>
               <p>Native name: 
-                <span> {names.join(", ")}</span>
+                {/* <span> {names.join(", ")}</span> */}
               </p>
               <p>Population:
                 <span> {info.population.toLocaleString("en-US")} </span>
@@ -80,10 +84,10 @@ const Country = () => {
                 <span> {data[0].tld[0]} </span>
               </p>
               <p>Currencies: 
-                <span> {currency} </span>
+                <span> {currencies.map((a) => a[1].name)} </span>
               </p>
               <p>Languages: 
-                <span> {languages.join(", ")} </span>
+                {/* <span> {languages.join(", ")} </span> */}
               </p>
         </InfosColumn>
           </CountryInfos>

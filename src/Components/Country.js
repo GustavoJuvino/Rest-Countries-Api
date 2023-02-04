@@ -15,36 +15,11 @@ const Country = () => {
     request(`https://restcountries.com/v3.1/alpha/${id}`, options);
   }, [id, request])
 
-  // Testing
-  // let languages = [];
-  // if(data) languages = data.languages.map((e) => e.name).join(", ");
+  let currencies = Object.entries(data?.[0].currencies);
 
-  let currencies = data ? Object.entries(data[0].currencies) : "";
+  let nativeNames = Object.entries(data?.[0].name.nativeName);
 
-  let nativeNames = data ? Object.entries(data[0].name.nativeName) : "";
-
-  let arrLanguages;
-  let languages = [];
-
-  // if(data) {
-  //   arrayCurrencies = Object.entries(data[0].currencies);
-  //   arrayCurrencies.forEach((a) => currency = a[1].name);
-
-  //   arrayNames = Object.entries(data[0].name.nativeName);
-  //   arrayNames.forEach((a) => names.push(a[1].common));
-
-  //   arrLanguages = Object.entries(data[0].languages);
-  //   arrLanguages.forEach((a) => languages.push(a[1]));
-  // }
-
-
-
-//  if(data) arrayCurrencies.forEach((a) => console.log(a));
-
-
-
-  // if(data) objNames = test(data[0].name.nativeName);
-  // if(data) console.log(objNames);
+  let languages = Object.entries(data?.[0].languages);
 
   return (
     <>
@@ -85,7 +60,7 @@ const Country = () => {
                 <span> {currencies.map((a) => a[1].name)} </span>
               </p>
               <p>Languages: 
-                {/* <span> {languages.join(", ")} </span> */}
+                <span> {languages.map((a) => a[1]).join(", ")} </span>
               </p>
         </InfosColumn>
           </CountryInfos>

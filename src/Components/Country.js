@@ -15,11 +15,16 @@ const Country = () => {
     request(`https://restcountries.com/v3.1/alpha/${id}`, options);
   }, [id, request])
 
-  let currencies = Object.entries(data?.[0].currencies);
+  // let currencies = Object.entries(data?.[0].currencies);
 
-  let nativeNames = Object.entries(data?.[0].name.nativeName);
+  // let nativeNames = Object.entries(data?.[0].name.nativeName);
 
-  let languages = Object.entries(data?.[0].languages);
+  // let languages = Object.entries(data?.[0].languages);
+
+  // testing
+  /* <span> {nativeNames.map((name) => name[1].common).join(", ")}</span>  */
+  let {currencies, name, languages} = data ? data[0] : "";
+  if(data) console.log(Object.values(name.nativeName).map((n) => n.common));
 
   return (
     <>
@@ -36,7 +41,11 @@ const Country = () => {
             <InfosColumn>
               <h1>{info.name.common}</h1>
               <p>Native name: 
-                <span> {nativeNames.map((name) => name[1].common).join(", ")}</span> 
+                <span>
+                  {Object.values(name.nativeName)
+                  .map((name) => name.common)
+                  .join(", ")}
+                </span>
               </p>
               <p>Population:
                 <span> {info.population.toLocaleString("en-US")} </span>
@@ -57,10 +66,10 @@ const Country = () => {
                 <span> {data[0].tld[0]} </span>
               </p>
               <p>Currencies: 
-                <span> {currencies.map((a) => a[1].name)} </span>
+                <span> {Object.values(currencies)[0].name} </span>
               </p>
               <p>Languages: 
-                <span> {languages.map((a) => a[1]).join(", ")} </span>
+                {/* <span> {languages.map((a) => a[1]).join(", ")} </span> */}
               </p>
         </InfosColumn>
           </CountryInfos>

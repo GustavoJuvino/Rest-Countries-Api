@@ -10,21 +10,12 @@ const Country = () => {
   const {data, request, error} = useFetch();
   const navigate = useNavigate();
 
+  let {currencies, name, languages} = data ? data[0] : "";
+
   React.useEffect(() => {
     const {options} = GET_INFOS();
     request(`https://restcountries.com/v3.1/alpha/${id}`, options);
   }, [id, request])
-
-  // let currencies = Object.entries(data?.[0].currencies);
-
-  // let nativeNames = Object.entries(data?.[0].name.nativeName);
-
-  // let languages = Object.entries(data?.[0].languages);
-
-  // testing
-  /* <span> {nativeNames.map((name) => name[1].common).join(", ")}</span>  */
-  let {currencies, name, languages} = data ? data[0] : "";
-  if(data) console.log(Object.values(name.nativeName).map((n) => n.common));
 
   return (
     <>
@@ -41,8 +32,7 @@ const Country = () => {
             <InfosColumn>
               <h1>{info.name.common}</h1>
               <p>Native name: 
-                <span>
-                  {Object.values(name.nativeName)
+                <span> {Object.values(name.nativeName)
                   .map((name) => name.common)
                   .join(", ")}
                 </span>
@@ -69,7 +59,7 @@ const Country = () => {
                 <span> {Object.values(currencies)[0].name} </span>
               </p>
               <p>Languages: 
-                {/* <span> {languages.map((a) => a[1]).join(", ")} </span> */}
+                <span> {Object.values(languages).join(", ")} </span>
               </p>
         </InfosColumn>
           </CountryInfos>

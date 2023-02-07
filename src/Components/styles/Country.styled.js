@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const BackButton = styled.button`
     width: 120px;
     height: 40px;
-    margin-left: 5%;
-    margin-top: 50px;
+    margin: 50px 0px 0px 5%;
     font-size: 14px;
     background-color: transparent;
     box-shadow: 0px 0px 10px 0px rgba(85, 85, 85, 0.200);
@@ -18,16 +17,15 @@ export const BackButton = styled.button`
 
 export const CountryContainer = styled.section`
     display: flex;
-    margin-top: 50px;
-    margin-left: 5%;
+    margin: 50px 0px 0px 5%;
 
-    @media (max-width: 800px) {
+    @media (max-width: 834px) {
         margin-top: 50px;
         display: block;
     }
 
     & img {
-        width: clamp( 340px, 35%, 35%);
+        width: max( 300px, 35%);
         height: max( 32%, 300px );
     }
 `
@@ -36,15 +34,14 @@ export const CountryInfos = styled.section`
     width: 60%;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 50px;
-    margin-left: 5%;
+    margin: 50px 0px 0px 5%;
 
-    @media (max-width: 1000px) {
-        margin-top: 0px;
+    @media (max-width: 834px) {
+        margin-top: 50px;
         display: block;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: flex) {
         margin-top: 50px;
         margin-left: 0;
     }

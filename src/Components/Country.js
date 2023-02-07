@@ -61,21 +61,21 @@ const Country = () => {
               <p>Languages: 
                 <span> {Object.values(languages).join(", ")} </span>
               </p>
-        </InfosColumn>
+            </InfosColumn>
 
-        <NavCountries>
-              <p>Border Countries:</p>
-              <div>
-                {data[0].borders && (
-                  data[0].borders.splice(0, 4).map((name) => (
-                    <button 
-                      key={name}
-                      onClick={() => {navigate(`/country/${name}`)}}>
-                      {name}
-                    </button>
-                    ))
-                  )}
-              </div>
+            <NavCountries>
+                <p>Border Countries:</p>
+                <div>
+                  {data[0].borders && (
+                    data[0].borders.splice(0, 4).map((name) => (
+                      <button 
+                        key={name}
+                        onClick={() => {navigate(`/country/${name}`)}}>
+                        {name}
+                      </button>
+                      ))
+                    )}
+                </div>
             </NavCountries>
           </CountryInfos>
         </CountryContainer>

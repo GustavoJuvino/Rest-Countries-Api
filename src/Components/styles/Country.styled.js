@@ -21,46 +21,46 @@ export const CountryContainer = styled.section`
     margin-top: 50px;
     margin-left: 5%;
 
-    @media (max-width: 1036px) {
+    @media (max-width: 800px) {
+        margin-top: 50px;
         display: block;
     }
 
     & img {
-        width: 550px;
-        height: auto;
-
-        @media (max-width: 1110px) {
-            width: 45%;
-        }
-
-        @media (max-width: 680px) {
-            width: 280px;
-        }
+        width: clamp( 340px, 35%, 35%);
+        height: max( 32%, 300px );
     }
 `
 
 export const CountryInfos = styled.section`
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-left: 5%;
 
-    @media (max-width: 1457px) {
+    @media (max-width: 1000px) {
+        margin-top: 0px;
+        display: block;
+    }
+
+    @media (max-width: 800px) {
         margin-top: 50px;
+        margin-left: 0;
     }
-
-    @media (max-width: 1036px) {
-        margin-left: 0px;
-    }
-
 
     & .infos-column-2{
         margin-top: 50px;
+        margin-left: 10%;
+
+        @media (max-width: 1000px) {
+            margin-left: 0;
+        }
     }
 `
 
 export const InfosColumn = styled.div`
-    width: 450px;
+    width: 250px;
 
     & h1 {
         font-size: 28px;
@@ -81,8 +81,8 @@ export const NavCountries = styled.nav`
     margin-top: 50px;
     display: flex;
 
-    @media (max-width: 1457px) {
-        margin-top: 50px;
+    @media (max-width: 732px) {
+        display: block;
     }
 
     @media (max-width: 400px) {
@@ -90,16 +90,14 @@ export const NavCountries = styled.nav`
         flex-wrap: wrap;
         & button {
             margin-top: 20px;
-            margin-left: 0px;
         }
     }
 
     & p {
         font-weight: 700;
+        @media (max-width: 1224px) {
+            margin-top: 10px;
     }
-
-    & div {
-        margin-left: 20px;
     }
 
     & button {
@@ -108,6 +106,15 @@ export const NavCountries = styled.nav`
         border: none;
         width: 120px;
         height: 28px;
+        margin-right: 20px;
         margin-left: 20px;
+
+        @media (max-width: 1224px) {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 560px) {
+            margin-left: 0px;
+        }
     }
 `

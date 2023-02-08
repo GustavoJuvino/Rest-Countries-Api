@@ -2,7 +2,7 @@ import React from 'react';
 import useFetch from '../Hooks/useFetch';
 import InputSearch from './InputSearch';
 import FilterMenu from './FilterMenu';
-import { CountriesSection, Country } from './styles/Countries.styled';
+import { Container, CountriesSection, Country } from './styles/Countries.styled';
 import { GET_INFOS } from '../api';
 import { useNavigate } from 'react-router-dom';
 
@@ -25,10 +25,10 @@ const Countries = () => {
 
   return (
     <>
-      <section className="first-container">
+      <Container>
         <InputSearch setSearch={setSearch}/>
         <FilterMenu setContinent={setContinent}/>
-      </section>
+      </Container>
 
       {data ? (
         <CountriesSection>

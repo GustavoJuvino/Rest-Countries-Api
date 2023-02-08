@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as SearchIcon } from '../Assets/search.svg';
-import { SearchDiv } from './styles/Input.styled';
+import { SearchDiv } from './styles/InputSearch.styled';
 
 const InputSearch = ({setSearch}) => {
 

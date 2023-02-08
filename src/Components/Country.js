@@ -63,22 +63,20 @@ const Country = () => {
               </p>
             </InfosColumn>
 
-            <NavCountries>
-              {data[0].borders && (
-                <>
-                  <p>Border Countries:</p>
-                  <div>
-                    {data[0].borders.splice(0,4).map((name) => (
-                      <button 
-                        key={name}
-                        onClick={() => {navigate(`/country/${name}`)}}>
-                        {name}
-                      </button>
-                    ))}
-                  </div>
-                </>
-              )}
-            </NavCountries>
+            {data[0].borders && (
+              <NavCountries>
+                <p>Border Countries:</p>
+                <div>
+                {data[0].borders.splice(0,4).map((name) => (
+                  <button 
+                    key={name}
+                    onClick={() => {navigate(`/country/${name}`)}}>
+                    {name}
+                  </button>
+                ))}
+                </div>
+              </NavCountries>
+            )}
           </CountryInfos>
         </CountryContainer>
       ))

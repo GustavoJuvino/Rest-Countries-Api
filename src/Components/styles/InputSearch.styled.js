@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const SearchDiv = styled.div`
     margin-top: 50px;
-    width: 450px;
+    width: max( 300px, 30%);
     height: 50px;
     box-shadow: 0px 0px 10px 0px rgba(85, 85, 85, 0.200);
     border-radius: 3px;

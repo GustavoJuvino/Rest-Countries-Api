@@ -49,10 +49,3 @@ a{
 ul, li{
     list-style: none;
 }
-
-.first-container{
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 150px 0px 150px;
-    height: auto;
-}

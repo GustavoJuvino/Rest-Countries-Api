@@ -1,9 +1,40 @@
 import styled from "styled-components";
 
+export const Container = styled.section`
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 150px 0px 10%;
+    height: auto;
+
+    @media (max-width: 1020px) {
+        display: block;
+    }
+
+    @media (max-width: 360px) {
+        margin-left: 0px;
+    }
+`
+
 export const CountriesSection = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-left: 150px;
+    margin-left: 10%;
+
+    @media (max-width: 1600px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 1250px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 1020px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media (max-width: 360px) {
+        margin-left: 0px;
+    }
 
     & h1 {
         font-size: 16px;

@@ -7,6 +7,7 @@ const HeaderContainer = styled.nav`
     h2 {
       font-size: 18px;
     }
+
     p {
       display: none;
     }

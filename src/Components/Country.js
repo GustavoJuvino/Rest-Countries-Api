@@ -19,7 +19,7 @@ const Country = () => {
   
   return (
     <>
-      <BackButton>
+      <BackButton onClick={() => { navigate(`/`) }}>
         <LeftIcon className="left-icon"/>
         Back
       </BackButton>
@@ -64,25 +64,27 @@ const Country = () => {
             </InfosColumn>
 
             <NavCountries>
-                <p>Border Countries:</p>
-                <div>
-                  {data[0].borders && (
-                    data[0].borders.splice(0, 4).map((name) => (
+              {data[0].borders && (
+                <>
+                  <p>Border Countries:</p>
+                  <div>
+                    {data[0].borders.splice(0,4).map((name) => (
                       <button 
                         key={name}
                         onClick={() => {navigate(`/country/${name}`)}}>
                         {name}
                       </button>
-                      ))
-                    )}
-                </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </NavCountries>
           </CountryInfos>
         </CountryContainer>
       ))
     ): null}
 
-    {error ? (<h1>{error}</h1>) : null}
+      {error ? (<h1>{error}</h1>) : null}
     </>
   )
 }

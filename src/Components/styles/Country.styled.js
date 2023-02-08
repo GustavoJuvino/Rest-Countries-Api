@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const BackButton = styled.button`
+    cursor: pointer;
     width: 120px;
     height: 40px;
     margin: 50px 0px 0px 5%;
@@ -47,10 +48,11 @@ export const CountryInfos = styled.section`
     }
 
     & .infos-column-2{
+        width: 400px;
         margin-top: 50px;
-        margin-left: 10%;
+        margin-left: 14%;
 
-        @media (max-width: 1000px) {
+        @media (max-width: 1326px) {
             margin-left: 0;
         }
     }

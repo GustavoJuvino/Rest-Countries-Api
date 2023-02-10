@@ -5,25 +5,10 @@ import {ReactComponent as ArrowDown} from '../Assets/expand.svg';
 const FilterMenu = ({setContinent}) => {
   const [display, setDisplay] = React.useState("none");
 
-  // Click outside menu
-  let filterSection = React.useRef();
-
-  // React.useEffect(() => {
-  //   if(filterSection){
-  //       let handler = (e) => {
-  //         if(!filterSection.current.contains(e.target)){
-  //           setDisplay("none");
-  //           document.removeEventListener("click", handler);
-  //         }
-  //       }
-  //       document.addEventListener("click", handler);
-  //   }
-  // },[display])
-
   const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   return (
-    <FilterContainer ref={filterSection}>
+    <FilterContainer>
           <p>Filter by Region
             <ArrowDown 
               className="arrow"
@@ -38,7 +23,7 @@ const FilterMenu = ({setContinent}) => {
               </li>
             ))}
           </ul>
-    </FilterContainer>
+    </FilterContainer>    
   )
 }
 

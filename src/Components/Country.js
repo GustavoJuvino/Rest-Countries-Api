@@ -5,6 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
 import { GET_INFOS } from '../api';
 
+
 const Country = () => {
   let {id} = useParams();
   const {data, request, error} = useFetch();
@@ -26,7 +27,7 @@ const Country = () => {
       
     {data ? (
       data.map((info) => (
-        <CountryContainer key={info.cioc}>
+        <CountryContainer key={info.cca2}>
           <img src={info.flags.svg} alt={info.tld}/>
           <CountryInfos>
             <InfosColumn>

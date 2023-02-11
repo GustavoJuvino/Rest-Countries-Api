@@ -24,7 +24,7 @@ const Countries = () => {
   }, [request, search, continent])
 
   return (
-    <>
+    <section style={{ backgroundColor: "var(--very-dark-blue)" }}>
       <Container>
         <InputSearch setSearch={setSearch}/>
         <FilterMenu setContinent={setContinent}/>
@@ -66,7 +66,7 @@ const Countries = () => {
       ) : null
     }
       
-    </>
+    </section>
   )
 }
 

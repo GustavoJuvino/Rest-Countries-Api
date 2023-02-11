@@ -4,7 +4,6 @@ import {ReactComponent as ArrowDown} from '../Assets/expand.svg';
 
 const FilterMenu = ({setContinent}) => {
   const [display, setDisplay] = React.useState("none");
-
   const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   return (

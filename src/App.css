@@ -37,7 +37,6 @@ h1, h2, h3, h4, p {
 }
 
 body{
-    background-color: var(--very-light-gray);
     font-family: var(--font-);
     overflow-x: hidden;
 }

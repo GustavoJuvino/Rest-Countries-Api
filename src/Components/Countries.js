@@ -1,19 +1,22 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { GET_INFOS } from '../api';
 import useFetch from '../Hooks/useFetch';
 import InputSearch from './InputSearch';
 import FilterMenu from './FilterMenu';
 import { Container, CountriesSection, Country } from './styles/Countries.styled';
-import { GET_INFOS } from '../api';
-import { useNavigate } from 'react-router-dom';
 
 const Countries = () => {
-  const {data, request} = useFetch();
-  const navigate = useNavigate();
   const [search, setSearch] = React.useState("");
   const [continent, setContinent] = React.useState("");
+  const {data, request} = useFetch();
+  const navigate = useNavigate();
+  const { darkMode } = useSelector((state) => state);
 
   React.useEffect(() => {
     const {options} = GET_INFOS();
+
     if(search.length > 0) {
       request(`https://restcountries.com/v3.1/name/${search}`, options);
     } else if (continent) {
@@ -23,8 +26,11 @@ const Countries = () => {
     }
   }, [request, search, continent])
 
+  let dark = "var(--very-dark-blue)";
+  let light = "var(--white-)";
+
   return (
-    <section style={{ backgroundColor: "var(--very-dark-blue)" }}>
+    <section style={{backgroundColor: darkMode ? dark : light}}>
       <Container>
         <InputSearch setSearch={setSearch}/>
         <FilterMenu setContinent={setContinent}/>

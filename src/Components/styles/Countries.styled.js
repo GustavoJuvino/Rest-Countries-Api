@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+export const Maintest = styled.section`
+`
+
 export const Container = styled.section`
     display: flex;
     justify-content: space-between;

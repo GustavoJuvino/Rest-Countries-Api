@@ -5,7 +5,7 @@ import { GET_INFOS } from '../api';
 import useFetch from '../Hooks/useFetch';
 import InputSearch from './InputSearch';
 import FilterMenu from './FilterMenu';
-import { Container, CountriesSection, Country } from './styles/Countries.styled';
+import { Maintest, Container, CountriesSection, Country } from './styles/Countries.styled';
 
 const Countries = () => {
   const [search, setSearch] = React.useState("");
@@ -30,7 +30,7 @@ const Countries = () => {
   let light = "var(--white-)";
 
   return (
-    <section style={{backgroundColor: darkMode ? dark : light}}>
+    <Maintest style={{ backgroundColor: darkMode ? dark : light }}>
       <Container>
         <InputSearch setSearch={setSearch}/>
         <FilterMenu setContinent={setContinent}/>
@@ -72,7 +72,7 @@ const Countries = () => {
       ) : null
     }
       
-    </section>
+    </Maintest>
   )
 }
 

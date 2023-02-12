@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 
 export const SearchDiv = styled.div`
+
+    @media (max-width: 1020px) {
+        margin-top: 0px;
+    }
+
     margin-top: 50px;
     width: max( 300px, 30%);
     height: 50px;

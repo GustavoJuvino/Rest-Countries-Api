@@ -1,8 +1,8 @@
 import React from 'react';
-import { ReactComponent as DarkMode } from '../Assets/dark-mode.svg';
-import { ReactComponent as LightMode } from '../Assets/light-mode.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { ActiveDarkMode } from "../store/darkMode";
+import { ReactComponent as DarkMode } from '../Assets/dark-mode.svg';
+import { ReactComponent as LightMode } from '../Assets/light-mode.svg';
 import styled from "styled-components";
 
 const HeaderContainer = styled.nav`
@@ -50,8 +50,7 @@ const Header = () => {
   return (
     <HeaderContainer 
       background={ darkMode ? dark : light }
-      color={ darkMode ? light : "black" }
-      >
+      color={ darkMode ? light : "black" } >
       <ul>
         <li>
           <h2>Where in the world?</h2>
@@ -67,4 +66,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

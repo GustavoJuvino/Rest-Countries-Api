@@ -44,20 +44,33 @@ const Header = () => {
   const { darkMode } = useSelector((state) => state);
   const dispatch = useDispatch();
 
+  const body = document.querySelector("body");
+
+  function testing() {
+    dispatch(ActiveDarkMode());
+  }
+
   let dark = "var(--dark-blue)";
   let light = "var(--white-)";
 
+  if(darkMode) {
+    body.style.color = "white"
+    body.style.background = "var(--very-dark-blue-2)";
+  } else {
+    body.style.color = "black"
+    body.style.background = light;
+  }
+
+
   return (
-    <HeaderContainer 
-      background={ darkMode ? dark : light }
-      color={ darkMode ? light : "black" } >
+    <HeaderContainer background={ darkMode ? dark : light }>
       <ul>
         <li>
           <h2>Where in the world?</h2>
         </li>
         <li 
           className="ThemeMode"
-          onClick={() => dispatch(ActiveDarkMode())}>
+          onClick={() => testing()}>
           { darkMode ? <LightMode/> : <DarkMode/> }
           { darkMode ? <p>Light Mode</p> : <p>Dark Mode</p> }
         </li>

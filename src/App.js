@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Header color="red"/>
+        <Header/>
         <Routes>
           <Route path='/' element={<Countries/>}/>
           <Route path='country/:id' element={<Country/>}/>

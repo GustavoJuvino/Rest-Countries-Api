@@ -5,18 +5,14 @@ import { SearchDiv } from './styles/InputSearch.styled';
 const InputSearch = ({setSearch}) => {
 
   return (
-        <SearchDiv>
-            <SearchIcon className='SearchIcon'/>
-            <input 
-                type="text" 
-                placeholder="Search for a country..."
-                onChange={ (event) =>
-                  setTimeout(() => {
-                    setSearch(event.target.value)
-                  }, 1200)
-                }
-              />
-        </SearchDiv>
+    <SearchDiv>
+      <SearchIcon className='SearchIcon'/>
+      <input 
+        type="text" 
+        placeholder="Search for a country..."
+        onChange={ (event) => setTimeout(() => setSearch(event.target.value), 1200)}
+      />
+    </SearchDiv>
   )
 }
 

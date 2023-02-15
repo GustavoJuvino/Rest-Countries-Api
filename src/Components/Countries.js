@@ -5,7 +5,7 @@ import { GET_INFOS } from '../api';
 import useFetch from '../Hooks/useFetch';
 import InputSearch from './InputSearch';
 import FilterMenu from './FilterMenu';
-import { Container, CountriesSection, Country } from './styles/Countries.styled';
+import { Container, CountriesSection, Country, InfosCountry } from './styles/Countries.styled';
 
 const Countries = () => {
   const [search, setSearch] = React.useState("");
@@ -26,8 +26,8 @@ const Countries = () => {
     }
   }, [request, search, continent])
 
-  let dark = "var(--very-dark-blue)";
-  let light = "var(--white-)";
+  let countryBackground;
+  countryBackground = darkMode ? "var(--dark-blue)" : "white" ;
 
   return (
     <>
@@ -45,7 +45,7 @@ const Countries = () => {
                 alt={info.cca2}              
                 onClick={() => {navigate(`country/${info.cca2}`)}}
               />
-              <div className="CountriesTexts">
+              <InfosCountry style={{background: countryBackground}}>
                 <h1
                   key={info.name.common}>
                   {info.name.common}
@@ -65,7 +65,7 @@ const Countries = () => {
                   <span>Capital: </span>
                   {info.capital}
                 </p>
-              </div>
+              </InfosCountry>
             </Country>
         ))}
         </CountriesSection>

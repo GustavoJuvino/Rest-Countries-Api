@@ -22,6 +22,7 @@ const FilterContainer = styled.section`
   background-color: ${(props) => props.background};
 
   & p {
+    cursor: pointer;
     display: flex;
     width: auto;
     height: 50px;
@@ -67,21 +68,22 @@ const FilterContainer = styled.section`
 `
 
 const FilterMenu = ({setContinent}) => {
-  const [test, setTest] = React.useState("none");
+  const [display, setDisplay] = React.useState(false);
   const { darkMode } = useSelector((state) => state);
   const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
+  let currentDisplay = display ? "block" : "none";
   return (
     <FilterContainer 
       background={ darkMode ? "var(--dark-blue)" : "white" }
       fill={ darkMode ? "white" : "black"}>
 
-      <p>Filter by Region
-        <ArrowDown className="arrow"
-        onClick={() => setTest(!test)}/>
+      <p onClick={() => setDisplay(!display)}>
+        Filter by Region 
+        <ArrowDown className="arrow"/>
       </p>
       
-      <ul style={{display: test}}>
+      <ul style={{display: currentDisplay}}>
         {continents.map((continent) => (
           <li key={continent} onClick={(event) => setContinent(event.target.innerText)}>
             {continent}

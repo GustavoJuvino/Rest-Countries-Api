@@ -33,19 +33,18 @@ background-color: ${(props) => props.background};
     padding-top: 4px;
 
   path {
-    fill: ${(props) => props.fill};
+    fill: ${(props) => props.color};
   }
 }
 
 `
 
-const InputSearch = ({setSearch}) => {
+const InputSearch = ({ setSearch }) => {
   const { darkMode } = useSelector((state) => state);
 
   return (
     <SearchDiv 
       background={ darkMode ? "var(--dark-blue)" : "white" }
-      fill={ darkMode ? "white" : "black" }
       color={ darkMode ? "white" : "black" }
     >  
       <SearchIcon className='SearchIcon'/>

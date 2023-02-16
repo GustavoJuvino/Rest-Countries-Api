@@ -67,12 +67,13 @@ const FilterContainer = styled.section`
 
 `
 
-const FilterMenu = ({setContinent}) => {
+const FilterMenu = ({ setContinent }) => {
   const [display, setDisplay] = React.useState(false);
   const { darkMode } = useSelector((state) => state);
   const continents = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   let currentDisplay = display ? "block" : "none";
+  
   return (
     <FilterContainer 
       background={ darkMode ? "var(--dark-blue)" : "white" }

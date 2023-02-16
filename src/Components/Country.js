@@ -7,7 +7,7 @@ import { GET_INFOS } from '../api';
 
 
 const Country = () => {
-  let {id} = useParams();
+  let { id } = useParams();
   const {data, request, error} = useFetch();
   const navigate = useNavigate();
 

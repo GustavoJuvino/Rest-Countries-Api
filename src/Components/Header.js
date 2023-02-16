@@ -41,7 +41,6 @@ const HeaderContainer = styled.nav`
 `
 
 const Header = ({dark, light}) => {
-  
   const { darkMode } = useSelector((state) => state);
   const dispatch = useDispatch();
 

@@ -16,7 +16,9 @@ const App = () => {
       <BrowserRouter>
         <Header dark={ darkBlue } light={ lightColor }/>
         <Routes>
-          <Route path='/' element={<Countries/>}/>
+          <Route path='/' element={ 
+            <Countries dark={ darkBlue } light={ lightColor } />
+            }/>
           <Route path='country/:id' element={<Country/>}/>
         </Routes>
       </BrowserRouter>

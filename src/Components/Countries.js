@@ -7,12 +7,12 @@ import InputSearch from './InputSearch';
 import FilterMenu from './FilterMenu';
 import { Container, CountriesSection, Country, InfosCountry } from './styles/Countries.styled';
 
-const Countries = () => {
+const Countries = ({ dark, light }) => {
+  const {data, request} = useFetch();
+  const { darkMode } = useSelector((state) => state);
   const [search, setSearch] = React.useState("");
   const [continent, setContinent] = React.useState("");
-  const {data, request} = useFetch();
   const navigate = useNavigate();
-  const { darkMode } = useSelector((state) => state);
 
   React.useEffect(() => {
     const {options} = GET_INFOS();
@@ -42,7 +42,7 @@ const Countries = () => {
                 alt={info.cca2}              
                 onClick={() => {navigate(`country/${info.cca2}`)}}
               />
-              <InfosCountry style={{background:  darkMode ? "var(--dark-blue)" : "white" }}>
+              <InfosCountry style={{ background: darkMode ? dark : light }}>
                 <h1
                   key={info.name.common}>
                   {info.name.common}

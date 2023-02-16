@@ -40,12 +40,10 @@ const HeaderContainer = styled.nav`
   }
 `
 
-const Header = () => {
+const Header = ({dark, light}) => {
+  
   const { darkMode } = useSelector((state) => state);
   const dispatch = useDispatch();
-
-  let dark = "var(--dark-blue)";
-  let light = "var(--white-)";
 
   // Body in DarkMode
   const body = document.querySelector("body");
@@ -64,9 +62,8 @@ const Header = () => {
   body.style.background = bodyColor;
   body.style.color = fontColor;
 
-
   return (
-    <HeaderContainer background={ darkMode ? dark : light }>
+    <HeaderContainer  background={ darkMode ? dark : light }>
       <ul>
         <li>
           <h2>Where in the world?</h2>

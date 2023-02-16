@@ -26,9 +26,6 @@ const Countries = () => {
     }
   }, [request, search, continent])
 
-  let countryBackground;
-  countryBackground = darkMode ? "var(--dark-blue)" : "white" ;
-
   return (
     <>
       <Container>
@@ -45,7 +42,7 @@ const Countries = () => {
                 alt={info.cca2}              
                 onClick={() => {navigate(`country/${info.cca2}`)}}
               />
-              <InfosCountry style={{background: countryBackground}}>
+              <InfosCountry style={{background:  darkMode ? "var(--dark-blue)" : "white" }}>
                 <h1
                   key={info.name.common}>
                   {info.name.common}

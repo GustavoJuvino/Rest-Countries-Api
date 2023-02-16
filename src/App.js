@@ -7,11 +7,14 @@ import Countries from './Components/Countries';
 import Country from './Components/Country';
 import './App.css';
 
+const darkBlue = "var(--dark-blue)";
+const lightColor = "var(--white-)";
+
 const App = () => {
   return (
-    <Provider store={store}>
+    <Provider store={ store }>
       <BrowserRouter>
-        <Header/>
+        <Header dark={ darkBlue } light={ lightColor }/>
         <Routes>
           <Route path='/' element={<Countries/>}/>
           <Route path='country/:id' element={<Country/>}/>

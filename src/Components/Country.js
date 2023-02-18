@@ -1,9 +1,9 @@
 import React from 'react';
-import { BackButton, CountryContainer, CountryInfos, InfosColumn, NavCountries} from './styles/Country.styled';
-import { ReactComponent as LeftIcon } from '../Assets/left-arrow.svg';
 import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
 import { GET_INFOS } from '../api';
+import { ReactComponent as LeftIcon } from '../Assets/left-arrow.svg';
+import { BackButton, CountryContainer, CountryInfos, InfosColumn, NavCountries} from './styles/Country.styled';
 
 
 const Country = () => {

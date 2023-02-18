@@ -7,12 +7,17 @@ export const BackButton = styled.button`
     margin: 50px 0px 0px 5%;
     font-size: 14px;
     background-color: transparent;
-    box-shadow: 0px 0px 10px 0px rgba(85, 85, 85, 0.200);
+    box-shadow: 0px 0px 20px 0px rgba(7, 7, 7, 0.30);
     border: none;
     border-radius: 5px;
+    color: ${(props) => props.color};
 
     & .left-icon{
         margin-right: 15px;
+
+        path{
+            fill: ${(props) => props.color};
+        }
     }
 `
 
@@ -96,17 +101,19 @@ export const NavCountries = styled.nav`
         font-weight: 700;
         @media (max-width: 1224px) {
             margin-top: 10px;
-    }
+    } 
     }
 
     & button {
         cursor: pointer;
-        box-shadow: 0px 0px 10px 0px rgba(85, 85, 85, 0.200);
+        box-shadow: 0px 0px 20px 0px rgba(7, 7, 7, 0.30);
         border: none;
         width: 120px;
         height: 28px;
         margin-right: 20px;
         margin-left: 20px;
+        background-color: transparent;
+        color: ${(props) => props.color};
 
         @media (max-width: 1224px) {
             margin-top: 10px;

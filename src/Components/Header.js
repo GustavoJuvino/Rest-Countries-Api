@@ -5,6 +5,7 @@ import { ReactComponent as DarkMode } from '../Assets/dark-mode.svg';
 import { ReactComponent as LightMode } from '../Assets/light-mode.svg';
 import styled from "styled-components";
 
+
 const HeaderContainer = styled.nav`
 
   @media (max-width: 450px) {
@@ -24,7 +25,7 @@ const HeaderContainer = styled.nav`
     width: 100vw;
     height: 70px;
     padding: 30px 5% 60px 5%;
-    box-shadow: 0px 0px 10px 1px rgba(85, 85, 85, 0.200);
+    box-shadow: 0px 0px 20px 0px rgba(7, 7, 7, 0.20);
     background: ${(props) => props.background};
 
   .ThemeMode{
@@ -44,18 +45,19 @@ const Header = ({dark, light}) => {
   const { darkMode } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  // Body in DarkMode
   const body = document.querySelector("body");
-
+  const buttons = document.querySelectorAll("button");
+  console.log(buttons);
+  
   let bodyColor;
   let fontColor;
-
+  
   if(darkMode) {
-     bodyColor = "var(--very-dark-blue-2)";
-     fontColor = "var(--white-)";
+      bodyColor = "var(--very-dark-blue-2)";
+      fontColor = "var(--white-)";
   } else {
-     bodyColor = "var(--very-light-gray)";
-     fontColor = "black";
+      bodyColor = "var(--very-light-gray)";
+      fontColor = "black";
   }
 
   body.style.background = bodyColor;

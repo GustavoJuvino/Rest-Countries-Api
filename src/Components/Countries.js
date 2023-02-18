@@ -42,7 +42,7 @@ const Countries = ({ dark, light }) => {
                 alt={info.cca2}              
                 onClick={() => {navigate(`country/${info.cca2}`)}}
               />
-              <InfosCountry style={{ background: darkMode ? dark : light }}>
+              <InfosCountry style={{ background: darkMode ? dark : light}}>
                 <h1
                   key={info.name.common}>
                   {info.name.common}

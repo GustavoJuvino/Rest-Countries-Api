@@ -61,8 +61,8 @@ export const InfosCountry = styled.div `
     height: 150px;
     margin-top: -6px;
     padding: 20px 0px 0px 20px;
-    box-shadow: 0px 0px 20px 0px rgba(7, 7, 7, 0.30);
     border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(7, 7, 7, 0.20);
 
     & h1 {
         padding-bottom: 10px;

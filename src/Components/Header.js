@@ -47,7 +47,6 @@ const Header = ({dark, light}) => {
 
   const body = document.querySelector("body");
   const buttons = document.querySelectorAll("button");
-  console.log(buttons);
   
   let bodyColor;
   let fontColor;

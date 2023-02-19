@@ -2,14 +2,22 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
 import { GET_INFOS } from '../api';
+import { useSelector } from 'react-redux';
 import { ReactComponent as LeftIcon } from '../Assets/left-arrow.svg';
-import { BackButton, CountryContainer, CountryInfos, InfosColumn, NavCountries} from './styles/Country.styled';
+import { 
+  BackButton,
+  CountryContainer,
+  CountryInfos,
+  InfosColumn,
+  NavCountries
+} from './styles/Country.styled';
 
 
 const Country = () => {
   let { id } = useParams();
   const {data, request, error} = useFetch();
   const navigate = useNavigate();
+  const { darkMode } = useSelector((state) => state);
 
   let {currencies, name, languages} = data ? data[0] : "";
 
@@ -20,7 +28,10 @@ const Country = () => {
   
   return (
     <>
-      <BackButton onClick={() => { navigate(`/`) }}>
+      <BackButton 
+        color={ darkMode ? "white" : "black" }
+        onClick={() => { navigate(`/`) }}
+      >
         <LeftIcon className="left-icon"/>
         Back
       </BackButton>
@@ -29,6 +40,7 @@ const Country = () => {
       data.map((info) => (
         <CountryContainer key={info.cca2}>
           <img src={info.flags.svg} alt={info.tld}/>
+          
           <CountryInfos>
             <InfosColumn>
               <h1>{info.name.common}</h1>
@@ -65,10 +77,10 @@ const Country = () => {
             </InfosColumn>
 
             {data[0].borders && (
-              <NavCountries>
+              <NavCountries color={ darkMode ? "white" : "black" }>
                 <p>Border Countries:</p>
                 <div>
-                {data[0].borders.splice(0,4).map((name) => (
+                {data[0].borders.slice(0,4).map((name) => (
                   <button 
                     key={name}
                     onClick={() => {navigate(`/country/${name}`)}}>

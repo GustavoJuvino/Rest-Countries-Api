@@ -4,12 +4,7 @@ import { ReactComponent as SearchIcon } from '../Assets/search.svg';
 import styled from "styled-components";
 
 const SearchDiv = styled.div`
-
-@media (max-width: 1020px) {
-    margin-top: 0px;
-}
-
-width: max( 300px, 30%);
+width: max( 260px, 25%);
 height: 50px;
 margin-top: 50px;
 box-shadow: 0px 0px 20px 0px rgba(7, 7, 7, 0.30);

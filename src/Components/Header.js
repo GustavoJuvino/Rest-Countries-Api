@@ -5,7 +5,6 @@ import { ReactComponent as DarkMode } from '../Assets/dark-mode.svg';
 import { ReactComponent as LightMode } from '../Assets/light-mode.svg';
 import styled from "styled-components";
 
-
 const HeaderContainer = styled.nav`
 
   @media (max-width: 450px) {
@@ -22,7 +21,7 @@ const HeaderContainer = styled.nav`
   ul{
     display: flex;
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     height: 70px;
     padding: 30px 5% 60px 5%;
     box-shadow: 0px 0px 20px 0px rgba(7, 7, 7, 0.20);
@@ -46,7 +45,6 @@ const Header = ({dark, light}) => {
   const dispatch = useDispatch();
 
   const body = document.querySelector("body");
-  const buttons = document.querySelectorAll("button");
   
   let bodyColor;
   let fontColor;
@@ -70,7 +68,8 @@ const Header = ({dark, light}) => {
         </li>
         <li 
           className="ThemeMode"
-          onClick={() => dispatch(ActiveDarkMode())}>
+          onClick={() => dispatch(ActiveDarkMode())}
+        >
           { darkMode ? <LightMode/> : <DarkMode/> }
           { darkMode ? <p>Light Mode</p> : <p>Dark Mode</p> }
         </li>

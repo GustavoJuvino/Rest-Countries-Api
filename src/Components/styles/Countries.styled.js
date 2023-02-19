@@ -6,7 +6,9 @@ export const Container = styled.section`
     margin: 0px 150px 0px 10%;
     height: auto;
 
-    @media (max-width: 1020px) {
+
+    @media (max-width: 840px) {
+        margin-top: 50px;
         display: block;
     }
 
@@ -28,7 +30,7 @@ export const CountriesSection = styled.div`
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (max-width: 1020px) {
+    @media (max-width: 840px) {
         grid-template-columns: repeat(1, 1fr);
     }
 

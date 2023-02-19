@@ -31,7 +31,7 @@ export const CountryContainer = styled.section`
     }
 
     & img {
-        width: max( 300px, 35%);
+        width: max( 250px, 35%);
         height: max( 32%, 300px );
     }
 `
@@ -53,11 +53,10 @@ export const CountryInfos = styled.section`
     }
 
     & .infos-column-2{
-        width: 400px;
         margin-top: 50px;
-        margin-left: 14%;
+        margin-left: 10%;
 
-        @media (max-width: 1326px) {
+        @media (max-width: 975px) {
             margin-left: 0;
         }
     }

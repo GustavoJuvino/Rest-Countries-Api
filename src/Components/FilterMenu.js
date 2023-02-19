@@ -30,7 +30,7 @@ const FilterContainer = styled.section`
     font-size: 14px;
     padding: 14px 0px 0px 20px;
     border-radius: 3px;
-    box-shadow: 0px 0px 10px 0px rgba(85, 85, 85, 0.200);
+    box-shadow: 0px 0px 20px 0px rgba(7, 7, 7, 0.20);
   }
 
   & .arrow {
@@ -44,6 +44,7 @@ const FilterContainer = styled.section`
     }
   }
 
+  // DropDown Menu
   & ul{
     position: absolute;
     background-color: ${(props) => props.background};

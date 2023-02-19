@@ -40,7 +40,6 @@ const Country = () => {
       data.map((info) => (
         <CountryContainer key={info.cca2}>
           <img src={info.flags.svg} alt={info.tld}/>
-          
           <CountryInfos>
             <InfosColumn>
               <h1>{info.name.common}</h1>
@@ -65,9 +64,11 @@ const Country = () => {
             </InfosColumn>
 
             <InfosColumn className='infos-column-2'>
-              <p>Top Level Domain: 
-                <span> {data[0].tld[0]} </span>
-              </p>
+              {data[0].tld ? (              
+                <p>Top Level Domain: 
+                  <span> {data[0].tld[0]} </span>
+                </p> 
+              ): ""}
               <p>Currencies: 
                 <span> {Object.values(currencies)[0].name} </span>
               </p>

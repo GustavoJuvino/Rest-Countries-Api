@@ -4,7 +4,9 @@ import { createSlice } from '@reduxjs/toolkit';
     name: 'darkMode',
     initialState: true,
     reducers: {
-      ActiveDarkMode: (state) => !state,
+      ActiveDarkMode: {
+        reducer: (state) => !state,
+      }
     },
   });
   

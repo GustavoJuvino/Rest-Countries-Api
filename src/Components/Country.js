@@ -40,6 +40,7 @@ const Country = () => {
       data.map((info) => (
         <CountryContainer key={info.cca2}>
           <img src={info.flags.svg} alt={info.tld}/>
+
           <CountryInfos>
             <InfosColumn>
               <h1>{info.name.common}</h1>

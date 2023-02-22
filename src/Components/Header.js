@@ -47,9 +47,9 @@ const Header = ({dark, light}) => {
   const body = document.querySelector("body");
   
   if(darkMode) {
-    body.classList.add(".darkBody")
+    body.classList.add("darkBody")
   } else {
-    body.classList.remove(".darkBody")
+    body.classList.remove("darkBody")
   }
 
   // TESTING

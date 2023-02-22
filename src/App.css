@@ -38,6 +38,13 @@ h1, h2, h3, h4, p {
 
 body{
     font-family: var(--font-);
+    /* background-color: var(--very-light-gray); */
+    color: black;
+}
+
+.darkBody{
+    background-color: var(--very-dark-blue-2);
+    color: purple;
 }
 
 a{

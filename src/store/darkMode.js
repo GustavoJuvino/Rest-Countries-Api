@@ -5,7 +5,17 @@ import { createSlice } from '@reduxjs/toolkit';
     initialState: false,
     reducers: {
       ActiveDarkMode: {
-        reducer: (state) => !state,
+        reducer: (state, action) => action.payload = !state,
+        prepare(payload) {
+          return {
+            meta: {
+              localStorage: {
+                key: "darkMode",
+                value: !payload
+              }
+            }
+          }
+        }
       }
     },
   });

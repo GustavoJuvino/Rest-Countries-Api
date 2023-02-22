@@ -46,32 +46,37 @@ const Header = ({dark, light}) => {
 
   const body = document.querySelector("body");
   
-  let bodyColor;
-  let fontColor;
-  
   if(darkMode) {
-      bodyColor = "var(--very-dark-blue-2)";
-      fontColor = "var(--white-)";
+    body.classList.add(".darkBody")
   } else {
-      bodyColor = "var(--very-light-gray)";
-      fontColor = "black";
+    body.classList.remove(".darkBody")
   }
 
-  body.style.background = bodyColor;
-  body.style.color = fontColor;
+  // TESTING
+  function testDark() {
+    dispatch(ActiveDarkMode());
+
+    if(!darkMode) localStorage.setItem("dark", true);
+    else localStorage.removeItem("dark");
+  }
+
+  const local = localStorage.getItem("dark");
+  React.useEffect(() => {
+    if(local && !darkMode) dispatch(ActiveDarkMode());
+  },[local, dispatch, darkMode])
 
   return (
-    <HeaderContainer  background={ darkMode ? dark : light }>
+    <HeaderContainer background={ darkMode ? dark : light }>
       <ul>
         <li>
           <h2>Where in the world?</h2>
         </li>
         <li 
           className="ThemeMode"
-          onClick={() => dispatch(ActiveDarkMode())}
+          onClick={() => testDark()}
         >
-          { darkMode ? <LightMode/> : <DarkMode/> }
-          { darkMode ? <p>Light Mode</p> : <p>Dark Mode</p> }
+          { local && dark  ? <LightMode/> : <DarkMode/> }
+          { local && dark  ? <p>Light Mode</p> : <p>Dark Mode</p> }
         </li>
       </ul>
     </HeaderContainer>

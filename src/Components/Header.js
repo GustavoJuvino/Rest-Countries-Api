@@ -44,26 +44,23 @@ const Header = ({dark, light}) => {
   const { darkMode } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const body = document.querySelector("body");
-  
-  if(darkMode) {
-    body.classList.add("darkBody")
-  } else {
-    body.classList.remove("darkBody")
-  }
-
-  // TESTING
-  function testDark() {
+  function activateDark() {
     dispatch(ActiveDarkMode());
 
-    if(!darkMode) localStorage.setItem("dark", true);
-    else localStorage.removeItem("dark");
+    if(!darkMode) localStorage.setItem("darkTheme", true);
+    else localStorage.removeItem("darkTheme");
   }
 
-  const local = localStorage.getItem("dark");
+  const local = localStorage.getItem("darkTheme");
+
   React.useEffect(() => {
     if(local && !darkMode) dispatch(ActiveDarkMode());
   },[local, dispatch, darkMode])
+
+  // Body Background
+  const body = document.querySelector("body");
+
+  darkMode ? body.classList.add("darkBody") : body.classList.remove("darkBody")
 
   return (
     <HeaderContainer background={ darkMode ? dark : light }>
@@ -73,7 +70,7 @@ const Header = ({dark, light}) => {
         </li>
         <li 
           className="ThemeMode"
-          onClick={() => testDark()}
+          onClick={() => activateDark()}
         >
           { local && dark  ? <LightMode/> : <DarkMode/> }
           { local && dark  ? <p>Light Mode</p> : <p>Dark Mode</p> }

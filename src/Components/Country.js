@@ -36,7 +36,7 @@ const Country = () => {
         Back
       </BackButton>
       
-    {data ? (
+      {data ? (
       data.map((info) => (
         <CountryContainer key={info.cca2}>
           <img src={info.flags.svg} alt={info.tld}/>
@@ -95,9 +95,9 @@ const Country = () => {
           </CountryInfos>
         </CountryContainer>
       ))
-    ): null}
+      ): null}
 
-      {error ? (<h1>{error}</h1>) : null}
+      {error ? navigate("*") : null}
     </>
   )
 }

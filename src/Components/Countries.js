@@ -8,7 +8,7 @@ import FilterMenu from './FilterMenu';
 import { Container, CountriesSection, Country, InfosCountry } from './styles/Countries.styled';
 
 const Countries = ({ dark, light }) => {
-  const {data, request} = useFetch();
+  const {data, request, error} = useFetch();
   const { darkMode } = useSelector((state) => state);
   const [search, setSearch] = React.useState("");
   const [continent, setContinent] = React.useState("");
@@ -66,9 +66,10 @@ const Countries = ({ dark, light }) => {
             </Country>
         ))}
         </CountriesSection>
-      ) : null
-    }
-      
+        ) : null
+      }
+
+      {error ? <h1>{ error }</h1> : null}
     </>
   )
 }

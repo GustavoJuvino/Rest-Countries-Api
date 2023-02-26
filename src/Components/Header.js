@@ -63,7 +63,7 @@ const Header = ({dark, light}) => {
   darkMode ? body.classList.add("darkBody") : body.classList.remove("darkBody")
 
   return (
-    <HeaderContainer background={ darkMode ? dark : light }>
+    <HeaderContainer testid="custom-header" background={ darkMode ? dark : light }>
       <ul>
         <li>
           <h2>Where in the world?</h2>

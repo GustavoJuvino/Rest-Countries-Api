@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store/configureStore';
 import Header from './Components/Header';
@@ -14,16 +14,19 @@ const lightColor = "var(--white-)";
 const App = () => {
   return (
     <Provider store={ store }>
-      <BrowserRouter>
+      <HashRouter>
         <Header dark={ darkBlue } light={ lightColor }/>
         <Routes>
-          <Route path='/' element={ 
-            <Countries dark={ darkBlue } light={ lightColor }/>
-          }/>
+          <Route 
+            path='/'
+            element={ 
+              <Countries dark={ darkBlue } light={ lightColor }/>
+            }
+          />
           <Route path='country/:id' element={ <Country/> }/>
           <Route path='*' element={ <Page404/> }/>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   )
 }

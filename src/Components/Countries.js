@@ -5,7 +5,13 @@ import { GET_INFOS } from '../api';
 import useFetch from '../Hooks/useFetch';
 import InputSearch from './InputSearch';
 import FilterMenu from './FilterMenu';
-import { Container, CountriesSection, Country, InfosCountry } from './styles/Countries.styled';
+import Head from './Head';
+import { 
+  Container, 
+  CountriesSection, 
+  Country, 
+  InfosCountry 
+} from './styles/Countries.styled';
 
 const Countries = ({ dark, light }) => {
   const {data, request, error} = useFetch();
@@ -28,6 +34,7 @@ const Countries = ({ dark, light }) => {
 
   return (
     <>
+      <Head title="Countries"/>
       <Container>
         <InputSearch setSearch={setSearch}/>
         <FilterMenu setContinent={setContinent}/>

@@ -1,9 +1,10 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate  } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
 import { GET_INFOS } from '../api';
 import { useSelector } from 'react-redux';
 import { ReactComponent as LeftIcon } from '../Assets/left-arrow.svg';
+import Head from './Head';
 import { 
   BackButton,
   CountryContainer,
@@ -25,9 +26,10 @@ const Country = () => {
     const {options} = GET_INFOS();
     request(`https://restcountries.com/v3.1/alpha/${id}`, options);
   }, [id, request])
-  
+
   return (
     <>
+      <Head title={ data ? data[0].name.common : ""}/>
       <BackButton 
         color={ darkMode ? "white" : "black" }
         onClick={() => { navigate(`/`) }}
@@ -37,7 +39,7 @@ const Country = () => {
       </BackButton>
       
       {data ? (
-      data.map((info) => (
+        data.map((info) => (
         <CountryContainer key={info.cca2}>
           <img src={info.flags.svg} alt={info.tld}/>
 
@@ -94,7 +96,7 @@ const Country = () => {
             )}
           </CountryInfos>
         </CountryContainer>
-      ))
+        ))
       ): null}
 
       {error ? navigate("*") : null}

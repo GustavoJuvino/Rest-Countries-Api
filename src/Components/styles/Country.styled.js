@@ -93,6 +93,7 @@ export const NavCountries = styled.nav`
         flex-wrap: wrap;
         & button {
             margin-top: 20px;
+            margin-bottom: 50px;
         }
     }
 

@@ -6,7 +6,7 @@ export const BackButton = styled.button`
     height: 40px;
     margin: 50px 0px 0px 5%;
     font-size: 14px;
-    background-color: transparent;
+    background-color: ${(props) => props.background};
     box-shadow: 0px 0px 20px 0px rgba(7, 7, 7, 0.30);
     border: none;
     border-radius: 5px;
@@ -112,7 +112,7 @@ export const NavCountries = styled.nav`
         height: 28px;
         margin-right: 20px;
         margin-left: 20px;
-        background-color: transparent;
+        background-color: ${(props) => props.background};
         color: ${(props) => props.color};
 
         @media (max-width: 1224px) {

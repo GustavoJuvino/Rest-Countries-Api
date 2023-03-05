@@ -32,6 +32,7 @@ const Country = () => {
       <Head title={ data ? data[0].name.common : ""}/>
       <BackButton 
         color={ darkMode ? "white" : "black" }
+        background={ darkMode ? "var(--dark-blue)" : "transparent" }
         onClick={() => { navigate(`/`) }}
       >
         <LeftIcon className="left-icon"/>
@@ -81,13 +82,17 @@ const Country = () => {
             </InfosColumn>
 
             {data[0].borders && (
-              <NavCountries color={ darkMode ? "white" : "black" }>
+              <NavCountries 
+                color={ darkMode ? "white" : "black" }
+                background={ darkMode ? "var(--dark-blue)" : "transparent" }
+              >
                 <p>Border Countries:</p>
                 <div>
                 {data[0].borders.slice(0,4).map((name) => (
                   <button 
                     key={name}
-                    onClick={() => {navigate(`/country/${name}`)}}>
+                    onClick={() => {navigate(`/country/${name}`)}}
+                  >
                     {name}
                   </button>
                 ))}

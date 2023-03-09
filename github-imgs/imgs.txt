@@ -1,0 +1,5 @@
+https://www.svgrepo.com/show/303206/javascript-logo.svg
+https://www.svgrepo.com/show/493719/react-javascript-js-framework-facebook.svg
+https://www.svgrepo.com/show/452093/redux.svg
+https://www.svgrepo.com/show/354262/react-router.svg
+https://www.svgrepo.com/show/306811/styled-components.svg

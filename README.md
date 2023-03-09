@@ -18,14 +18,12 @@
   <img src="https://www.svgrepo.com/show/493719/react-javascript-js-framework-facebook.svg" width=60px height=60px alt="React"/>
   <img src="https://www.svgrepo.com/show/452093/redux.svg"  width=60px height=60px alt="Redux"/>
   <img src="https://www.svgrepo.com/show/354262/react-router.svg" width=60px height=60px alt="Router"/>
-  <img src="https://www.svgrepo.com/show/306811/styled-components.svg" width=60px height=60px alt="styled-components"/>
  </div>
 
 <br><br>
 
 <!-- Desktop -->
 <h2 align="center">Desktop Version 🖥️</h2>
-<img src="" title="home">
 <img src="./github-imgs/rca1.png" title="page1">
 <img src="./github-imgs/darkMode1.png" title="darkMode1">
 <img src="./github-imgs/rca2.png" title="darkMode2">

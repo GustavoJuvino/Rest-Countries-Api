@@ -7,7 +7,7 @@
 <br>
 
 <h4 align = "center">
-    <a align="center" href="https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3/hub/responsive-multipage-website-created-with-html-sass-js-5OgOGVz5Y7">Front-end mentor challenge.</a> //
+    <a align="center" href="https://www.frontendmentor.io/solutions/responsive-website-created-with-react-redux-and-react-router-zSQR9OtjJL">Front-end mentor challenge.</a> //
      <a align="center" href="https://gustavojuvino.github.io/Rest-Countries-Api/">Rest Countries Website App.</a>
 </h4>
 
@@ -16,6 +16,7 @@
 <h6 align="center"> This project was created with:</h6>
 <br>
  <div align="center">
+  <img src="https://www.svgrepo.com/show/303206/javascript-logo.svg" width=60px height=60px alt="JS"/>
   <img src="https://www.svgrepo.com/show/493719/react-javascript-js-framework-facebook.svg" width=60px height=60px alt="React"/>
   <img src="https://www.svgrepo.com/show/452093/redux.svg"  width=60px height=60px alt="Redux"/>
   <img src="https://www.svgrepo.com/show/354262/react-router.svg" width=60px height=60px alt="Router"/>

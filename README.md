@@ -25,7 +25,6 @@
 
 <!-- Desktop -->
 <h2 align="center">Desktop Version 🖥️</h2>
-<img src="" title="home">
 <img src="./github-imgs/rca1.png" title="page1">
 <img src="./github-imgs/darkMode1.png" title="darkMode1">
 <img src="./github-imgs/rca2.png" title="darkMode2">
